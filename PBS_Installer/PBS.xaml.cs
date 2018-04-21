@@ -79,6 +79,7 @@ namespace PBS_Installer
 
             //DirectoryCopy(Directory.GetCurrentDirectory() + modFilesPath, installModPath, true);
             MessageBox.Show(installModPath);
+            Directory.Delete(temporaryFiles, true);
         }
 
 

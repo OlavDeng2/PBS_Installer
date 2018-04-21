@@ -1,0 +1,13 @@
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\bin\Release\PBS_Installer.exe.config
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\bin\Release\PBS_Installer.exe
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\bin\Release\PBS_Installer.pdb
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS.g.cs
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\App.g.cs
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer_MarkupCompile.cache
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer_MarkupCompile.lref
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS.baml
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer.g.resources
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer.Properties.Resources.resources
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer.csproj.GenerateResource.Cache
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer.exe
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer.pdb
