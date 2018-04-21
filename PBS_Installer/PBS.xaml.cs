@@ -136,11 +136,16 @@ namespace PBS_Installer
                 //< Selected Path >
                 modFilesPath = fileDialog.FileName;
                 //modFilesPath = folderDialog.SelectedPath;
-                ModFilesPath.Text = modFilesPath;
+                //ModFilesPath.Text = modFilesPath;
 
                 System.IO.Compression.ZipFile.ExtractToDirectory(modFilesPath, temporaryFiles);
 
             }
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
 
 
