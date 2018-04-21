@@ -12,3 +12,17 @@ e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installe
 e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.csproj.GenerateResource.Cache
 e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.exe
 e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.pdb
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\bin\Debug\PBS_Installer.exe.config
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\bin\Debug\PBS_Installer.exe
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\bin\Debug\PBS_Installer.pdb
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.csprojResolveAssemblyReference.cache
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS.g.cs
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\App.g.cs
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer_MarkupCompile.cache
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer_MarkupCompile.lref
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS.baml
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.g.resources
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.Properties.Resources.resources
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.csproj.GenerateResource.Cache
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.exe
+e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.pdb

@@ -6,16 +6,18 @@
         xmlns:local="clr-namespace:PBS_Installer"
         mc:Ignorable="d"
         Title="PBS Installer" Height="350" Width="525">
-	<Grid x:Name="PBS_Installer">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="43*"/>
-			<ColumnDefinition Width="474*"/>
-		</Grid.ColumnDefinitions>
-		<TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Welcome to PBS installer" VerticalAlignment="Top"/>
-		<Button x:Name="FolderSelect" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="357,48,0,0" Click="Button_Click"/>
-		<TextBlock x:Name="FolderPath" Grid.Column="1" HorizontalAlignment="Left" Margin="10,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="C:\Program Files (x86)\Steam\SteamApps\common\Cold Waters"/><LineBreak/><Run/></TextBlock>
-		<TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"><Run Text="Select install location (dont change if default)"/><LineBreak/><Run Text=" "/></TextBlock>
-		<Button x:Name="InstallButton" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="357,239,0,0" Click="InstallButton_Click"/>
+    <Grid x:Name="PBS_Installer">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="474*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Welcome to PBS installer" VerticalAlignment="Top"/>
+        <Button x:Name="FolderSelect" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="357,169,0,0" Click="Button_Click"/>
+        <TextBlock x:Name="FolderPath" Grid.Column="1" HorizontalAlignment="Left" Margin="0,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="C:\Program Files (x86)\Steam\SteamApps\common\Cold Waters"/><LineBreak/><Run/></TextBlock>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"><Run Text="Select install location (dont change if default)"/><LineBreak/><Run Text=" "/></TextBlock>
+        <Button x:Name="InstallButton" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="357,239,0,0" Click="InstallButton_Click"/>
+        <Button x:Name="SelectModFile" Content="..." Grid.Column="1" HorizontalAlignment="Left" Margin="357,88,0,0" VerticalAlignment="Top" Width="75" Click="SelectModFile_Click_1"/>
+        <TextBlock x:Name="ModFilesPath" Grid.Column="1" HorizontalAlignment="Left" Margin="0,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337"><Run Text="Please Select the Mod Zip file"/><LineBreak/><Run/></TextBlock>
 
-	</Grid>
+    </Grid>
 </Window>

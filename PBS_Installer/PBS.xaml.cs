@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
 
 namespace PBS_Installer
 {
@@ -22,9 +24,11 @@ namespace PBS_Installer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string modFiles = "\\override";
 
-        private string coldWatersFolderPath = "C:\\Program Files(x86)\\Steam\\SteamApps\\common\\Cold Waters";
+        private string temporaryFiles = "\\temp";
+        private string modFilesPath = "\\override";
+
+        private string coldWatersFolderPath = "C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Cold Waters";
         private string modInstallPath = "\\ColdWaters_Data\\StreamingAssets\\override";
 
         //Improve the naming, this is no good
@@ -39,12 +43,17 @@ namespace PBS_Installer
             //initialize the right path
             installModPath = coldWatersFolderPath + modInstallPath;
             installFolder = new DirectoryInfo(installModPath);
+            Directory.CreateDirectory(Directory.GetCurrentDirectory() + temporaryFiles);
+            temporaryFiles = (Directory.GetCurrentDirectory() + temporaryFiles);
+
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WinForms.FolderBrowserDialog folderDialog = new WinForms.FolderBrowserDialog();
-            folderDialog.ShowNewFolderButton = false; folderDialog.SelectedPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            folderDialog.ShowNewFolderButton = false;
+            folderDialog.SelectedPath = System.AppDomain.CurrentDomain.BaseDirectory;
             WinForms.DialogResult result = folderDialog.ShowDialog();
 
             if (result == WinForms.DialogResult.OK)
@@ -62,10 +71,13 @@ namespace PBS_Installer
 
         private void InstallButton_Click(object sender, RoutedEventArgs e)
         {
-            Directory.Delete(installModPath, true);
-            Directory.CreateDirectory(Directory.GetCurrentDirectory() + modFiles);
             Directory.CreateDirectory(installModPath);
-            DirectoryCopy(Directory.GetCurrentDirectory() + modFiles, installModPath, true);
+            Directory.Delete(installModPath, true);
+            Directory.CreateDirectory(installModPath);
+            System.IO.Compression.ZipFile.ExtractToDirectory(modFilesPath, installModPath);
+
+
+            //DirectoryCopy(Directory.GetCurrentDirectory() + modFilesPath, installModPath, true);
             MessageBox.Show(installModPath);
         }
 
@@ -107,5 +119,34 @@ namespace PBS_Installer
                 }
             }
         }
-    } 
+
+        private void SelectModFile_Click_1(object sender, RoutedEventArgs e)
+        {
+            WinForms.OpenFileDialog fileDialog = new WinForms.OpenFileDialog();
+            fileDialog.DefaultExt = "zip";
+            fileDialog.Filter = "zip files (*.zip)|*.zip";
+            fileDialog.InitialDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
+
+            WinForms.DialogResult result = fileDialog.ShowDialog();
+
+            if (result == WinForms.DialogResult.OK)
+            {
+                //----< Selected Folder >----
+                //< Selected Path >
+                modFilesPath = fileDialog.FileName;
+                //modFilesPath = folderDialog.SelectedPath;
+                ModFilesPath.Text = modFilesPath;
+
+            }
+        }
+
+
+
+
+        //Code to handle Vessels
+        
+        //
+    }
+
+
 }
