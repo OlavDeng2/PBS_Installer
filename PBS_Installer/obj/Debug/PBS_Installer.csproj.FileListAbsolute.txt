@@ -1,0 +1,14 @@
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\bin\Debug\PBS_Installer.exe.config
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\bin\Debug\PBS_Installer.exe
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\bin\Debug\PBS_Installer.pdb
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.csprojResolveAssemblyReference.cache
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS.g.cs
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\App.g.cs
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer_MarkupCompile.cache
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer_MarkupCompile.lref
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS.baml
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.g.resources
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.Properties.Resources.resources
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.csproj.GenerateResource.Cache
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.exe
+e:\Users\olav\Desktop\Programming\Cold_Waters_Modding\PBS Installer\PBS_Installer\PBS_Installer\obj\Debug\PBS_Installer.pdb
