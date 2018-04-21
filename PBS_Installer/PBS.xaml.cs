@@ -138,6 +138,8 @@ namespace PBS_Installer
                 //modFilesPath = folderDialog.SelectedPath;
                 ModFilesPath.Text = modFilesPath;
 
+                System.IO.Compression.ZipFile.ExtractToDirectory(modFilesPath, temporaryFiles);
+
             }
         }
 
@@ -145,8 +147,6 @@ namespace PBS_Installer
 
 
         //Code to handle Vessels
-        
-        //
     }
 
 
