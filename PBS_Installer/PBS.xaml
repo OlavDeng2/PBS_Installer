@@ -35,7 +35,7 @@
                 <Grid Background="#FFE5E5E5"/>
 
             </TabItem>
-            <TabItem Header="Install">
+            <TabItem Header="Install/uninstall">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="37*"/>
@@ -44,10 +44,11 @@
                         <ColumnDefinition Width="241*"/>
                         <ColumnDefinition Width="151*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock HorizontalAlignment="Left" Margin="6,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Grid.ColumnSpan="4" Grid.Column="1"><Run Text="Select install location (dont change if default)"/><LineBreak/><Run Text=" "/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="6,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Grid.ColumnSpan="4" Grid.Column="1" Text="Set your Cold Waters installation location (if default, dont change)"/>
                     <TextBlock x:Name="FolderPath" HorizontalAlignment="Left" Margin="6,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1"><Run Text="C:\Program Files (x86)\Steam\SteamApps\common\Cold Waters"/><LineBreak/><Run/></TextBlock>
                     <Button x:Name="FolderSelect" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,169,0,0" Click="Button_Click" Grid.Column="4"/>
-                    <Button x:Name="InstallButton" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,239,0,0" Click="InstallButton_Click" Grid.Column="4"/>
+                    <Button x:Name="InstallButton" Content="Install Mod" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,239,0,0" Click="InstallButton_Click" Grid.Column="4"/>
+                    <Button x:Name="UninstallModButton" Grid.ColumnSpan="2" Content="Uninstall Mod" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Grid.Column="2" Margin="0,239,0,0" Click="UninstallModButton_Click"/>
                 </Grid>
 
             </TabItem>

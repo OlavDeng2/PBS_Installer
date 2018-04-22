@@ -96,7 +96,7 @@ namespace PBS_Installer
 
 
             DirectoryCopy(Directory.GetCurrentDirectory() + "\\temp\\override", installModPath, true);
-            MessageBox.Show(installModPath);
+            MessageBox.Show("The More Playable Subs mod is now installed! You can now launch Cold Waters");
             //Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
         }
 
@@ -193,6 +193,12 @@ namespace PBS_Installer
         private void ModifyCampaignFiles()
         {
 
+        }
+
+        private void UninstallModButton_Click(object sender, RoutedEventArgs e)
+        {
+            Directory.Delete(installModPath, true);
+            MessageBox.Show("The more Playable Subs mod is now uninstalled, you can now play vanilla Cold Waters");
         }
     }
 }
