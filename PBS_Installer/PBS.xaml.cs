@@ -229,6 +229,11 @@ namespace PBS_Installer
         private void ModifyCampaignFiles()
         {
             //This function should modify the campaign files to take into account the subs that have been added/removed
+            GetCampaignList();
+            foreach(string campaign in campaigns)
+            {
+                //do the thing
+            }
         }
 
         private void ModifyMissionFiles()
