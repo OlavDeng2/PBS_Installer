@@ -192,7 +192,12 @@ namespace PBS_Installer
 
         private void ModifyCampaignFiles()
         {
+            //This function should modify the campaign files to take into account the subs that have been added/removed
+        }
 
+        private void ModifyMissionFiles()
+        {
+            //This function should modify the single missions files to take into account the subs that have been added/removed
         }
 
         private void UninstallModButton_Click(object sender, RoutedEventArgs e)
