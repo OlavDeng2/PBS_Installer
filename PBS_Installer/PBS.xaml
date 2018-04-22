@@ -23,16 +23,22 @@
                         <ColumnDefinition Width="202*"/>
                         <ColumnDefinition Width="60*"/>
                         <ColumnDefinition Width="36*"/>
-                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="6*"/>
                         <ColumnDefinition Width="201*"/>
                     </Grid.ColumnDefinitions>
-                    <ListBox x:Name="SubmarineListBox" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="427" Margin="10,35,0,0" Grid.ColumnSpan="5" SelectionChanged="SubmarineListBox_SelectionChanged" SelectionMode="Multiple"/>
-                    <Button x:Name="SelectSubmarinesApply" Content="Apply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Grid.Column="4" Margin="137,261,0,0" Click="SelectSubmarinesApply_Click"/>
+                    <ListBox x:Name="SubmarineListBox" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="427" Margin="10,35,0,0" Grid.ColumnSpan="6" SelectionChanged="SubmarineListBox_SelectionChanged" SelectionMode="Multiple"/>
+                    <Button x:Name="SelectSubmarinesApply" Content="Apply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Grid.Column="5" Margin="137,261,0,0" Click="SelectSubmarinesApply_Click"/>
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Select Campaigns">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Select Campaigns and missions">
+                <Grid Background="#FFE5E5E5">
+                    <ListBox x:Name="CampaignListBox" HorizontalAlignment="Left" Height="117" VerticalAlignment="Top" Width="491" Margin="10,23,0,0"/>
+                    <ListBox x:Name="MissionListBox" HorizontalAlignment="Left" Height="117" VerticalAlignment="Top" Width="491" Margin="10,164,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"><Run Text="Campaigns"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Text="Missions"/>
+                </Grid>
 
             </TabItem>
             <TabItem Header="Install/uninstall">
@@ -47,8 +53,8 @@
                     <TextBlock HorizontalAlignment="Left" Margin="6,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Grid.ColumnSpan="4" Grid.Column="1" Text="Set your Cold Waters installation location (if default, dont change)"/>
                     <TextBlock x:Name="FolderPath" HorizontalAlignment="Left" Margin="6,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1"><Run Text="C:\Program Files (x86)\Steam\SteamApps\common\Cold Waters"/><LineBreak/><Run/></TextBlock>
                     <Button x:Name="FolderSelect" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,169,0,0" Click="Button_Click" Grid.Column="4"/>
-                    <Button x:Name="InstallButton" Content="Install Mod" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,239,0,0" Click="InstallButton_Click" Grid.Column="4"/>
-                    <Button x:Name="UninstallModButton" Grid.ColumnSpan="2" Content="Uninstall Mod" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Grid.Column="2" Margin="0,239,0,0" Click="UninstallModButton_Click"/>
+                    <Button x:Name="InstallButton" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,239,0,0" Click="InstallButton_Click" Grid.Column="4"/>
+                    <Button x:Name="UninstallModButton" Grid.ColumnSpan="2" Content="Uninstall Mod" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Grid.Column="2" Margin="0,239,0,0"/>
                 </Grid>
 
             </TabItem>
