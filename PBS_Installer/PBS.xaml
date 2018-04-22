@@ -34,10 +34,11 @@
             </TabItem>
             <TabItem Header="Select Campaigns and missions">
                 <Grid Background="#FFE5E5E5">
-                    <ListBox x:Name="CampaignListBox" HorizontalAlignment="Left" Height="117" VerticalAlignment="Top" Width="491" Margin="10,23,0,0"/>
-                    <ListBox x:Name="MissionListBox" HorizontalAlignment="Left" Height="117" VerticalAlignment="Top" Width="491" Margin="10,164,0,0"/>
+                    <ListBox x:Name="CampaignListBox" HorizontalAlignment="Left" Height="117" VerticalAlignment="Top" Width="378" Margin="10,23,0,0" SelectionMode="Multiple"/>
+                    <ListBox x:Name="MissionListBox" HorizontalAlignment="Left" Height="117" VerticalAlignment="Top" Width="378" Margin="10,164,0,0" SelectionMode="Multiple"/>
                     <TextBlock HorizontalAlignment="Left" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"><Run Text="Campaigns"/><LineBreak/><Run/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="10,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Text="Missions"/>
+                    <Button x:Name="CampaignApplyButton" Content="Apply" HorizontalAlignment="Left" Margin="426,261,0,0" VerticalAlignment="Top" Width="75" Click="CampaignApplyButton_Click"/>
                 </Grid>
 
             </TabItem>

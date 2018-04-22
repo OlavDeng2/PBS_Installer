@@ -24,11 +24,11 @@ namespace PBS_Installer
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        //The paths of the files within this program
         private string temporaryFiles = "\\temp";
         private string modFilesPath = "\\PBS mod";
-        private string submarineListPath = "\\override\\vessels\\_vessel_list.txt";
 
+        //The install paths for the game, and the mod
         private string coldWatersFolderPath = "C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Cold Waters";
         private string modInstallPath = "\\ColdWaters_Data\\StreamingAssets\\override";
 
@@ -37,9 +37,17 @@ namespace PBS_Installer
 
         private DirectoryInfo installFolder;
 
+        //Vessels list
+        private string submarineListPath = "\\override\\vessels\\_vessel_list.txt";
         private string[] vessels;
         List<string> selectedVessels = new List<string>();
 
+        //Missions list
+        private string missionsListPath = "\\override\\language_en\\mission\\missions_single.txt";
+        private string[] missions;
+        List<string> selectedMissions = new List<string>();
+
+        //Initialize the MainWindow
         public MainWindow()
         {
             InitializeComponent();
@@ -48,12 +56,19 @@ namespace PBS_Installer
 
 
             GetVesselList(Directory.GetCurrentDirectory() + modFilesPath + submarineListPath);
+            GetMissionsList(Directory.GetCurrentDirectory() + modFilesPath + missionsListPath);
             
             foreach(string vessel in vessels)
             {
                 SubmarineListBox.Items.Add(vessel);
             }
             SubmarineListBox.SelectAll();
+
+            foreach(string mission in missions)
+            {
+                MissionListBox.Items.Add(mission);
+            }
+            MissionListBox.SelectAll();
 
             //initialize the right path
             installModPath = coldWatersFolderPath + modInstallPath;
@@ -63,10 +78,9 @@ namespace PBS_Installer
 
             
             DirectoryCopy(Directory.GetCurrentDirectory() + modFilesPath, System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles), true);
-
-
         }
 
+        //The bellow functions handles events from the main window
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -92,15 +106,97 @@ namespace PBS_Installer
         {
             Directory.Delete(installModPath, true);
             Directory.CreateDirectory(installModPath);
-            //System.IO.Compression.ZipFile.ExtractToDirectory(modFilesPath, installModPath);
-
 
             DirectoryCopy(Directory.GetCurrentDirectory() + "\\temp\\override", installModPath, true);
             MessageBox.Show("The More Playable Subs mod is now installed! You can now launch Cold Waters");
             //Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
         }
 
+        private void SelectModFile_Click_1(object sender, RoutedEventArgs e)
+        {
+            WinForms.OpenFileDialog fileDialog = new WinForms.OpenFileDialog();
+            fileDialog.DefaultExt = "zip";
+            fileDialog.Filter = "zip files (*.zip)|*.zip";
+            fileDialog.InitialDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
 
+            WinForms.DialogResult result = fileDialog.ShowDialog();
+
+            if (result == WinForms.DialogResult.OK)
+            {
+                //----< Selected Folder >----
+                //< Selected Path >
+                modFilesPath = fileDialog.FileName;
+                //modFilesPath = folderDialog.SelectedPath;
+                //ModFilesPath.Text = modFilesPath;
+            }
+        }
+
+        private void SelectSubmarinesApply_Click(object sender, RoutedEventArgs e)
+        {
+            selectedVessels.Clear();
+            foreach(object selectedItem in SubmarineListBox.SelectedItems)
+            {
+                selectedVessels.Add(selectedItem.ToString());
+            }
+
+            CreateNewVesselsList();
+        }
+
+        private void UninstallModButton_Click(object sender, RoutedEventArgs e)
+        {
+            Directory.Delete(installModPath, true);
+            MessageBox.Show("The more Playable Subs mod is now uninstalled, you can now play vanilla Cold Waters");
+        }
+
+        private void SubmarineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CampaignApplyButton_Click(object sender, RoutedEventArgs e)
+        {
+            selectedMissions.Clear();
+            foreach (object selectedItem in MissionListBox.SelectedItems)
+            {
+                selectedMissions.Add(selectedItem.ToString());
+            }
+
+            CreateNewMissionsList();
+        }
+
+        //The functions bellow are not handling events directly from the main window
+        private void GetVesselList(string vesselListPath)
+        {
+            vessels = System.IO.File.ReadAllLines(vesselListPath);
+        }
+
+        private void CreateNewVesselsList()
+        {
+            System.IO.File.WriteAllLines(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + submarineListPath), selectedVessels);
+        }
+
+        private void GetMissionsList(string missionListLocation)
+        {
+            missions = System.IO.File.ReadAllLines(missionListLocation);
+        }
+
+        private void CreateNewMissionsList()
+        {
+            System.IO.File.WriteAllLines(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + missionsListPath), selectedMissions);
+        }
+
+
+        private void ModifyCampaignFiles()
+        {
+            //This function should modify the campaign files to take into account the subs that have been added/removed
+        }
+
+        private void ModifyMissionFiles()
+        {
+            //This function should modify the single missions files to take into account the subs that have been added/removed
+        }
+
+        
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
         {
             // Get the subdirectories for the specified directory.
@@ -139,71 +235,8 @@ namespace PBS_Installer
             }
         }
 
-        private void SelectModFile_Click_1(object sender, RoutedEventArgs e)
-        {
-            WinForms.OpenFileDialog fileDialog = new WinForms.OpenFileDialog();
-            fileDialog.DefaultExt = "zip";
-            fileDialog.Filter = "zip files (*.zip)|*.zip";
-            fileDialog.InitialDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
-
-            WinForms.DialogResult result = fileDialog.ShowDialog();
-
-            if (result == WinForms.DialogResult.OK)
-            {
-                //----< Selected Folder >----
-                //< Selected Path >
-                modFilesPath = fileDialog.FileName;
-                //modFilesPath = folderDialog.SelectedPath;
-                //ModFilesPath.Text = modFilesPath;
-
-                //System.IO.Compression.ZipFile.ExtractToDirectory(modFilesPath, temporaryFiles);
-
-            }
-        }
-
-
-        //Code to handle Vessels
-        private void GetVesselList(string vesselListPath)
-        {
-            vessels = System.IO.File.ReadAllLines(vesselListPath);
-        }
-
-        private void SubmarineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-
-        private void SelectSubmarinesApply_Click(object sender, RoutedEventArgs e)
-        {
-            selectedVessels.Clear();
-            foreach(object selectedItem in SubmarineListBox.SelectedItems)
-            {
-                selectedVessels.Add(selectedItem.ToString());
-            }
-
-            CreateNewVesselsList();
-        }
-
-        private void CreateNewVesselsList()
-        {
-            System.IO.File.WriteAllLines(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + submarineListPath), selectedVessels);
-        }
-
-
-        private void ModifyCampaignFiles()
-        {
-            //This function should modify the campaign files to take into account the subs that have been added/removed
-        }
-
-        private void ModifyMissionFiles()
-        {
-            //This function should modify the single missions files to take into account the subs that have been added/removed
-        }
-
-        private void UninstallModButton_Click(object sender, RoutedEventArgs e)
-        {
-            Directory.Delete(installModPath, true);
-            MessageBox.Show("The more Playable Subs mod is now uninstalled, you can now play vanilla Cold Waters");
-        }
+        
     }
+
+    
 }
