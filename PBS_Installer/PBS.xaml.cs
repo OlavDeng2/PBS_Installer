@@ -43,9 +43,17 @@ namespace PBS_Installer
         List<string> selectedVessels = new List<string>();
 
         //Missions list
+        private string missionPath = "\\override";
         private string missionsListPath = "\\override\\language_en\\mission\\missions_single.txt";
         private string[] missions;
         List<string> selectedMissions = new List<string>();
+
+        //Campaign folder
+        private string campaignPath = "\\override\\campaign";
+        private string[] campaigns;
+        List<string> selectedCampaigns = new List<string>();
+        List<string> campaignsToDelete = new List<string>();
+
 
         //Initialize the MainWindow
         public MainWindow()
@@ -55,8 +63,11 @@ namespace PBS_Installer
             Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
 
 
+
+            //TODO: Make the bellow into a function
             GetVesselList(Directory.GetCurrentDirectory() + modFilesPath + submarineListPath);
             GetMissionsList(Directory.GetCurrentDirectory() + modFilesPath + missionsListPath);
+            GetCampaignList();
             
             foreach(string vessel in vessels)
             {
@@ -70,14 +81,21 @@ namespace PBS_Installer
             }
             MissionListBox.SelectAll();
 
+            foreach(string campaign in campaigns)
+            {
+                CampaignListBox.Items.Add(campaign);
+            }
+            CampaignListBox.SelectAll();
+
             //initialize the right path
             installModPath = coldWatersFolderPath + modInstallPath;
             installFolder = new DirectoryInfo(installModPath);
             Directory.CreateDirectory(Directory.GetCurrentDirectory() + temporaryFiles);
             temporaryFiles = (Directory.GetCurrentDirectory() + temporaryFiles);
 
-            
             DirectoryCopy(Directory.GetCurrentDirectory() + modFilesPath, System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles), true);
+
+
         }
 
         //The bellow functions handles events from the main window
@@ -155,16 +173,27 @@ namespace PBS_Installer
 
         private void CampaignApplyButton_Click(object sender, RoutedEventArgs e)
         {
+            //The code for the campaigns
+            selectedCampaigns.Clear();
+            foreach(object selectedItem in CampaignListBox.SelectedItems)
+            {
+                selectedCampaigns.Add(selectedItem.ToString());
+            }
+            //CreateNewCampaignList();
+
+
+            //the code for missions
             selectedMissions.Clear();
             foreach (object selectedItem in MissionListBox.SelectedItems)
             {
                 selectedMissions.Add(selectedItem.ToString());
             }
-
-            CreateNewMissionsList();
+            //CreateNewMissionsList();
         }
 
         //The functions bellow are not handling events directly from the main window
+
+        //TODO: bellow functions can easily be consolidated into fewer functions. 
         private void GetVesselList(string vesselListPath)
         {
             vessels = System.IO.File.ReadAllLines(vesselListPath);
@@ -183,6 +212,17 @@ namespace PBS_Installer
         private void CreateNewMissionsList()
         {
             System.IO.File.WriteAllLines(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + missionsListPath), selectedMissions);
+        }
+
+        private void GetCampaignList()
+        {
+            campaigns = Directory.GetDirectories(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + campaignPath), "camp*");
+        }
+
+        private void CreateNewCampaignList()
+        {
+            //this will just delete the campaigns that we do not want)
+
         }
 
 
