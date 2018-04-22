@@ -55,7 +55,6 @@ namespace PBS_Installer
             }
             SubmarineListBox.SelectAll();
 
-
             //initialize the right path
             installModPath = coldWatersFolderPath + modInstallPath;
             installFolder = new DirectoryInfo(installModPath);
