@@ -53,6 +53,7 @@ namespace PBS_Installer
             {
                 SubmarineListBox.Items.Add(vessel);
             }
+            SubmarineListBox.SelectAll();
 
 
             //initialize the right path
