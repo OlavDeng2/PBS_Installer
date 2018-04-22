@@ -1,0 +1,8 @@
+[Unit Reference]
+ShipClass=Dolfijn
+Description=[NLD] Dolfijn Class SS (1968 Era)
+History=Self Noise Rating: 150 db\nEscape Depth: 600 ft\n\nThe Dolfijn Class submarine is the first indigenous submarines built for the Royal Netherlands Navy after WW2. She has 3 seperate pressure hulls arranged in a triangle which are enclosed in the outer steel casing. The upper hull was used for living/working and the lower two hulls were purely for the engines. 
+
+[Player Ship Instances]
+PlayerClassNames=Dolfijn,Zeehond,Potvis,Tonijn
+PlayerClassHullNumbers=S808,S809,S804,S805

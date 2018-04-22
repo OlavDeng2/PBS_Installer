@@ -1,0 +1,34 @@
+//The Escape of Red October (USA Defection)
+
+UseTerrain=TRUE
+MapCoordinates=2468,1484
+MapNavigationData=campaign/images/maps/norwegian_sea_navmap
+MapElevationData=campaign/images/maps/norwegian_sea_bathymetry
+WorldObjectsData=campaign/maps/norwegian_sea_world_objects
+
+//Environment
+Date=10 NOV 1984
+Hemisphere=North
+Time=1100
+UsePresetEnvironment=TRUE
+Weather=Clear
+SeaState=LightBreeze
+DuctStrength=Moderate
+LayerStrength=Moderate
+
+//Enemy Ships
+NumberOfEnemyUnits=5-10,2-6
+CombatBehaviour=OFFENSIVE,OFFENSIVE
+EnemyUnitMissionCritical=FALSE,FALSE
+EnemyShipClasses=wp_takr_kiev|wp_rkr_kirov|wp_kr_sverdlov|wp_pkr_moskva|wp_bpk_udaloy|wp_bpk_kara|wp_bpk_kresta2|wp_rkr_kresta1|wp_em_sovremenny|wp_bpk_kashin|wp_bpk_kanin|wp_em_kotlin|wp_skr_krivak1|wp_skr_riga|wp_mpk_grisha3|wp_mpk_poti|wp_bdk_ropucha,wp_ssn_victor3|wp_ssn_sierra|rus_ssn_akula1|rus_ssn_akula2|wp_ssn_alfa|wp_ss_kilo|wp_ss_foxtrot|wp_ss_romeo|rus_ssn_yasen|rus_ss_lada|rus_ssn_mike
+FormationCruiseSpeed=20
+
+//Enemy Aircraft
+NumberOfHelicopters=0
+HelicopterType=wp_helix
+NumberOfAircraft=2
+AircraftType=wp_il-38_may
+
+PlayerVessels=rus_ssbn_redoctober,rus_ssbn_redoctober_silent
+
+OtherVessels=rus_ssn_akula1,rus_ssn_akula2,rus_ssn_yasen,rus_ssn_mike,rus_ss_lada,wp_ssn_sierra,wp_ssn_alfa,wp_ssn_victor3,wp_ssn_victor2,wp_ssn_victor1,wp_ssn_november,wp_ss_kilo,wp_ss_tango,wp_ss_foxtrot,wp_ss_romeo,wp_ss_whiskey,,wp_takr_kiev,wp_rkr_kirov,wp_kr_sverdlov,wp_pkr_moskva,wp_bpk_udaloy,wp_bpk_kara,wp_bpk_kresta2,wp_em_sovremenny,wp_bpk_kashin,wp_bpk_kanin,wp_em_kotlin,wp_skr_krivak1,wp_skr_riga,wp_mpk_grisha3,wp_mpk_poti,wp_bdk_ropucha,wp_bdk_alligator,wp_pb_don,wp_pb_ugra,wp_ms_leninskiy_komsomol,wp_ms_poltava,wp_vt_boris_chilikin,wp_vt_dubna,wp_vt_kazbek,wp_vtr_amguema,wp_vtr_andizhan,wp_vtr_andizhan_mod,wp_vtr_yuniy_partizan,biologic_blue_whale,biologic_humpback_whale,civ_fv_trawler,civ_mv_ice_breaker,civ_mv_oiler,civ_mv_large_cargo,civ_mv_large_cargo2,civ_mv_small_cargo,civ_mv_small_cargo2,civ_mv_small_cargo3

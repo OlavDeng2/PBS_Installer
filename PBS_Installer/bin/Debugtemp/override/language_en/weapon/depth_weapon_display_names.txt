@@ -1,0 +1,54 @@
+[MORTARS]
+wp_rbu6000_mortar=RBU 6000=This is a Hedgehog-style launcher that employes rockets to throw depth charges in a preset pattern over great ranges. The designation denotes the max range in meters.
+wp_rbu2500_mortar=RBU 2500=This is a Hedgehog-style launcher that employes rockets to throw depth charges in a preset pattern over great ranges. The designation denotes the max range in meters.
+wp_rbu1000_mortar=RBU 1000=This is a Hedgehog-style launcher that employes rockets to throw depth charges in a preset pattern over great ranges. The designation denotes the max range in meters.
+
+[GUNS]
+wp_6x3_b-38_shell=152mm/57 Guns=152mm/57 B-38
+
+wp_ak-130_shell=AK-130 Guns=130mm/70 AK-130
+
+wp_sm2_shell=130mm/58 Guns=130mm/58 SM-2-1
+
+wp_ak-100_shell=AK-100 Guns=100mm/70 AK-100
+
+wp_sm2_shell=130mm/58 Guns=130mm/58 SM-2-1
+
+wp_b-34_shell=B-34 Guns=100mm/56 B-34
+
+wp_ak-726_shell=AK-726 Guns=AK-726
+
+wp_ak-725_shell=AK-725 Guns=AK-725
+
+wp_depth_bomb=Depth Bomb 25=Very Light Aerial Dropped Depth Bomb
+
+wp_depth_bomb_50=Depth Bomb PLAB-50=PLAB-50 Light Aerial Dropped Depth Bomb
+
+wp_depth_bomb_120=Depth Bomb PLAB-250-120=PLAB-250-120 Medium Aerial Dropped Depth Bomb
+
+wp_depth_bomb_250=Depth Bomb PLAB-250=PLAB-250 Heavy Aerial Dropped Depth Bomb
+
+wp_depth_bomb_500=Depth Bomb KAB-500=KAB-500PL Zagon Guided Heavy Aerial Dropped Depth Bomb
+
+wp_depth_bomb_1kt=Nuclear Depth Bomb1KT=Nuclear Depth Bomb 1 Kiloton
+
+wp_depth_bomb_5kt=Nuclear Depth Bomb 5KT=Nuclear Depth Bomb 5 Kiloton Helo-Dropped
+
+usn_depth_bomb_10kt=Nuclear Depth Bomb 10KT=10KT Nuclear Depth Bomb B57 or ASROC
+
+usn_depth_bomb_11kt=Nuclear Depth Bomb 11KT=Nuclear Depth Bomb Mk101 Lulu 11KT
+
+
+wp_proximity_mine=Proximity Mine=Proximity Mine
+
+usn_9x3_mk-7_shell=MK-7 Guns=16inch/50 MK-7
+
+usn_mk-30_shell=MK-30 Guns=5inch/38 MK-30
+
+usn_mk-38_shell=MK-38 Guns=76mm/62 MK-38
+
+usn_mk-42_shell=MK-42 Guns=5inch/54 MK-42
+
+usn_mk-45_shell=MK-45 Guns=5inch/54 MK-45
+
+usn_depth_bomb=US Depth Bomb=US Aerial Dropped Depth Bomb

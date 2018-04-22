@@ -1,0 +1,14 @@
+Image=campaign/images/nato naval 1
+MissionLocation=G-I-UK Gap. 100 miles due North of Tórshavn
+Briefing=As a US Carrier Battle Group heads to Bergen, their escorts report an ESM contact.
+Briefing=
+Briefing=Primary Objective:
+Briefing=Identify and engage the ESM Contact.
+Briefing=
+Briefing=Secondary Objective:
+Briefing=Avoid Detection.
+Briefing=
+Briefing=
+Briefing=
+Briefing=
+Briefing=(Mission Submitted By III./JG 2 Oberst. Included with permission.)

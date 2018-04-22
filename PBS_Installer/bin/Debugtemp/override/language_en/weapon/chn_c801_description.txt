@@ -1,0 +1,4 @@
+﻿[Weapon Reference]
+WeaponName=C-801
+WeaponDescriptiveName=C-801 Anti-Ship Missile
+WeaponDescription=The C-801 is a subsonic Chinese anti-ship missile. The C-801 is a huge diversion from earlier Chinese anti-ship missiles such as HY/SY/FL AShMs in that its size has drastically reduced, and the layout was similar to that of contemporary western AShMs: the dimension of C-801 is extremely close to that of French Exocet, while the triple control surfaces of C-801 are almost identical to those found on the American Harpoon, and C-801 is sometimes referred by some as the Chinese Exocet.

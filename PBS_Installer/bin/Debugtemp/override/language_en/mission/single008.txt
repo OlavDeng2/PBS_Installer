@@ -1,0 +1,9 @@
+Image=campaign/images/pact ssbn 2
+MissionLocation=In the north Barents Sea
+Briefing=Your SSBN is being hunted by US submarines. Eliminate them.
+Briefing=
+Briefing=Primary Objective:
+Briefing=Destroy all US submarines
+Briefing=
+Briefing=Secondary Objective:
+Briefing=Survive

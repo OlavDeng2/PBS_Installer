@@ -1,0 +1,4 @@
+[Weapon Reference]
+WeaponName=MK VIII m4
+WeaponDescriptiveName=UK 21 inch Mark VII mod 4
+WeaponDescription=The Mark VIII was designed around 1925 and was the first British burner-cycle design torpedo. It was used from 1927 on submarines of the O class onwards and motor torpedo boats. On 2 May 1982 the Royal Navy submarine HMS Conqueror sank the Argentine cruiser ARA General Belgrano with three Mark VIII mod 4 torpedoes during the Falklands War. This is the only sinking of a surface ship by a nuclear-powered submarine in wartime (and only the second sinking of a surface ship by any submarine since the end of World War II).

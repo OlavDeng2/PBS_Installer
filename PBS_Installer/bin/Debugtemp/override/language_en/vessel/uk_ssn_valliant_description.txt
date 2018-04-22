@@ -1,0 +1,9 @@
+[Unit Reference]
+ShipClass=Valiant
+Description=[GBR] Valiant Class SSN (1968 Era)
+History=Self Noise Rating: 136 db\nEscape Depth: 600 ft\n\nThe class were based on Dreadnought, but were enlarged by 20 feet (6 m) and had a dived displacement of 4,900 tons compared to 4,000 tons. Improvements made since the original Dreadnought meant that they ran significantly quieter under main power, and also had a Paxman diesel-electric generator that could be used for silent running. In most other respects (outside the power plant), the Valiants were identical to Dreadnought. According to former head of the Royal Corps of Naval Constructors R.J. Daniel, when US Admiral Hyman G. Rickover, widely regarded as the father of the nuclear submarine, initially learned of the proposed rafting system for the Valiant class he was dismissive of the concept, with the result that the Royal Navy gained an advantage in submarine silencing that the United States Navy did not introduce until considerably later.
+
+[Player Ship Instances]
+PlayerClassNames=HMS Valiant,HMS Warspite
+
+PlayerClassHullNumbers=S102,S103

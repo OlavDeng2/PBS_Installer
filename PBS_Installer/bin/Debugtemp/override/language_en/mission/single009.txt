@@ -1,0 +1,9 @@
+Image=campaign/images/ohio 1.jpg
+MissionLocation=In the north Barents Sea
+Briefing=Your SSBN is being hunted by Russian submarines. Eliminate them.
+Briefing=
+Briefing=Primary Objective:
+Briefing=Destroy all Russian submarines
+Briefing=
+Briefing=Secondary Objective:
+Briefing=Survive

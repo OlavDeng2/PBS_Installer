@@ -1,0 +1,7 @@
+[Unit Reference]
+ShipClass=LARGO CARGO T1
+Description=Large Cargo T1 (<b>NEUTRAL</b>)
+History=This is a <b>NEUTRAL</b> merchant vessel.\n\n<b>Mod limitations:</b>\nProps will not turn.\nModel will disappear if destroyed.
+[Player Ship Instances]
+PlayerClassNames=
+PlayerClassHullNumbers=

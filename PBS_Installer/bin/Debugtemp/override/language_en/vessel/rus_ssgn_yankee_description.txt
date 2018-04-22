@@ -1,0 +1,9 @@
+[Unit Reference]
+ShipClass=Yankee "Sidecar"
+Description=[RUS] Yankee Sidecar Class SSGN (1984 Era)
+History=Self Noise Rating: 147 db\nEscape Depth: 600 ft\n\nAlso known as Yankee SSGN, this was another single-ship class (in this case K-420) converted into an SSGN. It was refitted to carry up to 20 cruise missiles instead of the normal 16 SLBMs. It was meant as a tri-service strategic weapon, and thus would have filled a rather different role than the tactically-oriented Oscar Class submarine SSGNs of the same era.
+
+[Player Ship Instances]
+PlayerClassNames=Andromeda
+
+PlayerClassHullNumbers=K-420

@@ -1,0 +1,4 @@
+[Weapon Reference]
+WeaponName=Yu-5
+WeaponDescriptiveName=Yu-5 Torpedo
+WeaponDescription=The Yu-5 torpedo is the first wire-guided torpedo developed by China. It is an ASW torpedo designed for submarines. At least two modifications of Yu-5 torpedo have been completed since it was accepted into the Chinese service, with one completed in the summer of 1995, and another in 1998. However, due to the very limited information released, it is not known what modification was completed in which year. The modifications included incorporation of ASuW capability and updated electronics.

@@ -1,0 +1,4 @@
+﻿[Weapon Reference]
+WeaponName=YJ-82
+WeaponDescriptiveName=YJ-82 Anti-Ship Missile
+WeaponDescription=The YJ-82 is a subsonic Chinese anti-ship missile. The YJ-82 is a huge diversion from earlier Chinese anti-ship missiles such as HY/SY/FL AShMs in that its size has drastically reduced, and the layout was similar to that of contemporary western AShMs: the dimension of YJ-82 is extremely close to that of French Exocet, while the triple control surfaces of YJ-82 are almost identical to those found on the American Harpoon, and YJ-82 is sometimes referred by some as the Chinese Exocet.

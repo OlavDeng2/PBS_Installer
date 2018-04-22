@@ -1,0 +1,8 @@
+[Unit Reference]
+ShipClass=Barbel
+Description=[USA] Barbel Class SS (Early) (1968 Era)
+History=Self Noise Rating: 145 db\nEscape Depth: 600 ft\n\nThe Barbel Class submarines (affectionately known in the United States Navy's submarine force as the 'B-Girls') were the last diesel-electric propelled attack submarines built by the United States Navy and incorporated numerous, radical engineering improvements over previous classes. They were the first production warships built with the teardrop-shape hull developed from the experimental USS Albacore (AGSS-569) and the first to combine the control room, attack center, and conning tower in the same space in the hull. This class of submarine became part of the US Navy's fleet in 1959. The Barbels were initially built with bow mounted diving planes, but these were replaced by sail planes (aka fairwater planes) within a few years.
+
+[Player Ship Instances]
+PlayerClassNames=Barbel,Blueback,Bonefish
+PlayerClassHullNumbers=SS-580,SS-581,SS-582

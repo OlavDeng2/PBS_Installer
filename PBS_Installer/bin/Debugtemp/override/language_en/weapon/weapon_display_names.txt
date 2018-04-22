@@ -1,0 +1,20 @@
+[Depth Charges, Mortars and Shells]
+wp_rbu6000_mortar=RBU 6000
+wp_rbu2500_mortar=RBU 2500
+wp_depth_bomb=Depth Bomb
+wp_depth_bomb_50=Depth Bomb PLAB-50
+wp_depth_bomb_120=Depth Bomb PLAB-120
+wp_depth_bomb_250=Depth Bomb PLAB-250
+wp_depth_bomb_500=Depth Bomb KAB-500
+wp_6x3_b-38_shell=6x3 B-38 152mm Guns
+wp_ak-130_shell=AK-130 130mm Guns
+wp_ak-100_shell=AK-100 100mm Guns
+wp_b-34_shell=B-34 100mm Guns
+wp_ak-726_shell=AK-726 76.2mm Guns
+wp_ak-725_shell=AK-725 57mm Guns
+usn_9x3_mk-7_shell=MK-7 Guns
+usn_mk-30_shell=MK-30 Guns
+usn_mk-38_shell=MK-38 Guns
+usn_mk-42_shell=MK-42 Guns
+usn_mk-45_shell=MK-45 Guns
+usn_depth_bomb=US Depth Bomb

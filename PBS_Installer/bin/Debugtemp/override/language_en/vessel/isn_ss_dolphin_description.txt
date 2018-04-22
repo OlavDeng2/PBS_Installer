@@ -1,0 +1,9 @@
+[Unit Reference]
+ShipClass=Dolphin
+Description=[ISR] Dolphin 1 SS (1990 Era)
+History=Self Noise Rating: 110 db\nEscape Depth: 600 ft\n\nThe Dolphin class is actually two related sub-classes of diesel-electric submarine developed and constructed by Howaldtswerke-Deutsche Werft AG (HDW), Germany for the Israeli Navy. The first boats of the class were based on the export-only German 209-class submarines, but modified and enlarged. The Dolphin 1 sub-class is slightly larger than the German Navy Type 212 in length and displacement. Each submarine is fitted with 6 x 533 mm (21.0 in) torpedo tubes, and 4 x 650 mm (26 in) torpedo tubes. The very large 650 mm tubes can be used for laying mines, larger submarine-launched cruise missiles, or swimmer delivery vehicles, and with liners the tubes could be used for standard torpedoes and submarine-launched missiles. According to the German Defense Ministry the 650 mm tubes are to have a liner installed for firing 533 mm UGM-84 Harpoon missiles. The boats were first armed with Atlas Elektronik DM2A3 torpedoes using wire-guided active homing. Israel has also procured the DM2A4 torpedo, successor to their DM2A3s, which are electrically propelled, equipped with fiber optic communications and has countermeasure resistant signals processing and mission logic. A wet and dry compartment is installed for deploying underwater special operations teams.
+
+[Player Ship Instances]
+PlayerClassNames=Dolphin,Leviathan,Tekumah
+
+PlayerClassHullNumbers=1,2,3

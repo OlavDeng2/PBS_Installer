@@ -1,0 +1,4 @@
+﻿[Weapon Reference]
+WeaponName=YJ-18
+WeaponDescriptiveName=YJ-18 Anti-Ship Missile
+WeaponDescription=The YJ-18 is a Chinese family of anti-ship missiles. The missile can be launched from vertical launching systems and uses an inertial guidance system.

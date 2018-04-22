@@ -1,0 +1,33 @@
+//The Duel - 1968 (RUS)
+
+UseTerrain=TRUE
+MapCoordinates=1470,946
+MapNavigationData=campaign/images/maps/norwegian_sea_navmap
+MapElevationData=campaign/images/maps/norwegian_sea_bathymetry
+WorldObjectsData=campaign/maps/norwegian_sea_world_objects
+
+//Environment
+Date=15 DEC 1968
+Hemisphere=North
+Time=1200
+UsePresetEnvironment=FALSE
+Weather=Rain
+SeaState=Moderate Breeze
+DuctStrength=Moderate
+LayerStrength=Moderate
+
+//Enemy Ships
+NumberOfEnemyUnits=1-1
+CombatBehaviour=OFFENSIVE
+EnemyShipClasses=usn_ssn_sturgeon_68|usn_ssn_permit_68|usn_ssn_skipjack_68|usn_ss_guppyIIa|usn_ss_barbel_68|usn_ssn_tang|usn_ss_albacore
+FormationCruiseSpeed=12
+
+//Enemy Aircraft
+NumberOfHelicopters=0
+HelicopterType=wp_helix
+NumberOfAircraft=0
+AircraftType=wp_il-38_may
+
+PlayerVessels=rus_ssbn_borei,rus_ssbn_typhoon,rus_ssbn_typhoon_vls,rus_ssbn_redoctober,rus_ssbn_redoctober_silent,rus_ssbn_yankee,rus_ssgn_yankee,rus_ssbn_delta3,rus_ssbn_delta4,rus_ssgn_oscar1,rus_ssgn_oscar,rus_ssgn_charlie1,rus_ssgn_charlie2,rus_ssgn_echo1,rus_ssgn_echo2,rus_ssgn_papa,rus_ssg_juliet,rus_ssn_akula1,rus_ssn_akula2,rus_ssn_yasen,rus_ssn_sierra,rus_ssn_alfa,rus_ssn_alfa2,rus_ssn_mike,rus_ssn_victor1,rus_ssn_victor2,rus_ssn_victor3,rus_ssn_november,rus_ss_kilo,rus_ss_kilo_imp,rus_ss_lada,rus_ss_tango,rus_ss_foxtrot,rus_ss_romeo,rus_ss_whiskey,rus_ss_whiskeylb,jmsdf_ss_yushio,jmsdf_ss_oyashio,chn_ss_romeo,chn_ssn_type91_70,chn_ssn_type91_90,chn_ssn_type93,chn_ssn_type93a,chn_ssn_type93b,chn_ssbn_type092,dprk_ss_romeo
+
+OtherVessels=usn_ssn_sturgeon_68,usn_ssn_permit_68,usn_ssn_skipjack_68,usn_ss_barbel_68,usn_ss_guppyIIa,usn_ss_tang,usn_ss_albacore,biologic_blue_whale,biologic_humpback_whale,civ_fv_trawler,civ_mv_ice_breaker,civ_mv_oiler,civ_mv_large_cargo,civ_mv_large_cargo2,civ_mv_small_cargo,civ_mv_small_cargo2,civ_mv_small_cargo3

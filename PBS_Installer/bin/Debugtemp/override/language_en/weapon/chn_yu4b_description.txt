@@ -1,0 +1,4 @@
+[Weapon Reference]
+WeaponName=Yu-4B
+WeaponDescriptiveName=Yu-4B Torpedo
+WeaponDescription=The Yu-4B torpedo is the Chinese development of the Russian SAET-50 ASuW passive acoustic homing torpedo. Due to the adoption of newer technologies such as the silver-zinc battery, the performance of Yu-4 torpedo has exceeded the Russian SAET-50 torpedo it is based on. Like Yu-1 torpedo, Yu-4 torpedoes in Chinese inventory have been continuously modified, such as incorporating ASW capability, updated electronics and propulsion system

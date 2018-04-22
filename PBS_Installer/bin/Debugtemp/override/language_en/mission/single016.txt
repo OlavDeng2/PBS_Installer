@@ -1,0 +1,10 @@
+Image=campaign/images/nato insertion 3
+MissionLocation=In the vicinity of Narvik
+Briefing=Run the ASW gauntlet to covertly insert a special forces team into occupied Narvik.
+Briefing=
+Briefing=Primary Objective:
+Briefing=Load a Special Forces team on board
+Briefing=Release team within the deployment zone.
+Briefing=
+Briefing=Secondary Objective:
+Briefing=Avoid detection.

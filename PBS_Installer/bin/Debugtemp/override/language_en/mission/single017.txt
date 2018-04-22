@@ -1,0 +1,10 @@
+Image=campaign/images/nato missile land attack
+MissionLocation=Near Gremikha, on the Kola peninsula
+Briefing=Perform a strike with cruise missiles to deliver a crushing blow deep in the Soviets' backyard.
+Briefing=
+Briefing=Primary Objective:
+Briefing=Add 10 TLAM missiles to stores.
+Briefing=Fire 10 TLAMs into the deployment zone.
+Briefing=
+Briefing=Secondary Objective:
+Briefing=Avoid detection.

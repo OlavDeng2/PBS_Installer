@@ -1,0 +1,4 @@
+[Weapon Reference]
+WeaponName=JL-1 SLBM
+WeaponDescriptiveName=JL-1 (SLBM)
+WeaponDescription=The JL-1 was deployed on Xia Class submarine in 1986. The Type 092 Xia Class nuclear submarines have 12 launch tubes.\nThe JL-1 was initially tested and deployed on the PLAN's modified Golf Class SSB. The Golf has since been modified again for further testing of other missiles, such as the JL-2, which has test-launched multiple times with varying levels of success.\n\nIn-game range, 275000 yards

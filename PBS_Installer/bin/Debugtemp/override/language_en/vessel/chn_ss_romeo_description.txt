@@ -1,0 +1,9 @@
+[Unit Reference]
+ShipClass=Romeo
+Description=[CHN] Romeo (Type 33) Class SS (1968 Era)
+History=Self Noise Rating: 127 db\nEscape Depth: 600 ft\n\nThis is the chinese version of the Soviet Romeo. It has a new slightly better sonar and it produces a little less noise.
+
+[Player Ship Instances]
+PlayerClassNames=Long March 1
+
+PlayerClassHullNumbers=LM-01

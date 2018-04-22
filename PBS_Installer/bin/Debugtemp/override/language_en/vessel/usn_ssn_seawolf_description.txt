@@ -1,0 +1,9 @@
+[Unit Reference]
+ShipClass=Seawolf
+Description=[USA] Seawolf Class SSN (1990 Era)
+History=Self Noise Rating: 110 db\nEscape Depth: 600 ft\n\nThe Seawolf was conceived as a faster, better-armed eventual replacement for the Los Angeles Class nuclear-powered attack submarines. The alterations to the design will include modifications to the ballast control, mission management spaces and the creation of a flexible ocean interface known as a 'wasp waist', which will enable the deployment and recovery of payloads without the use of torpedo tubes. Other additions include a new high Capacity communications mast and ROV handling system. The Seawolf's modular design introduces important improvements and innovations. It has greater manoeuvrability than the Los Angeles Class, space for later upgrades and weapons developments, and better sonars.
+
+[Player Ship Instances]
+PlayerClassNames=Seawolf,Connecticut,Jimmy Carter
+
+PlayerClassHullNumbers=SSN-21,SSN-22,SSN-23

@@ -26,7 +26,8 @@ namespace PBS_Installer
     {
 
         private string temporaryFiles = "\\temp";
-        private string modFilesPath = "\\override";
+        private string modFilesPath = "\\PBS mod";
+        private string submarineListPath = "\\override\\vessels\\_vessel_list.txt";
 
         private string coldWatersFolderPath = "C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Cold Waters";
         private string modInstallPath = "\\ColdWaters_Data\\StreamingAssets\\override";
@@ -36,15 +37,33 @@ namespace PBS_Installer
 
         private DirectoryInfo installFolder;
 
+        private string[] vessels;
+        List<string> selectedVessels = new List<string>();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
+
+
+            GetVesselList(Directory.GetCurrentDirectory() + modFilesPath + submarineListPath);
+            
+            foreach(string vessel in vessels)
+            {
+                SubmarineListBox.Items.Add(vessel);
+            }
+
 
             //initialize the right path
             installModPath = coldWatersFolderPath + modInstallPath;
             installFolder = new DirectoryInfo(installModPath);
             Directory.CreateDirectory(Directory.GetCurrentDirectory() + temporaryFiles);
             temporaryFiles = (Directory.GetCurrentDirectory() + temporaryFiles);
+
+            
+            DirectoryCopy(Directory.GetCurrentDirectory() + modFilesPath, System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles), true);
+
 
         }
 
@@ -71,15 +90,14 @@ namespace PBS_Installer
 
         private void InstallButton_Click(object sender, RoutedEventArgs e)
         {
-            Directory.CreateDirectory(installModPath);
             Directory.Delete(installModPath, true);
             Directory.CreateDirectory(installModPath);
-            System.IO.Compression.ZipFile.ExtractToDirectory(modFilesPath, installModPath);
+            //System.IO.Compression.ZipFile.ExtractToDirectory(modFilesPath, installModPath);
 
 
-            //DirectoryCopy(Directory.GetCurrentDirectory() + modFilesPath, installModPath, true);
+            DirectoryCopy(Directory.GetCurrentDirectory() + "\\temp\\override", installModPath, true);
             MessageBox.Show(installModPath);
-            Directory.Delete(temporaryFiles, true);
+            //Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
         }
 
 
@@ -138,21 +156,43 @@ namespace PBS_Installer
                 //modFilesPath = folderDialog.SelectedPath;
                 //ModFilesPath.Text = modFilesPath;
 
-                System.IO.Compression.ZipFile.ExtractToDirectory(modFilesPath, temporaryFiles);
+                //System.IO.Compression.ZipFile.ExtractToDirectory(modFilesPath, temporaryFiles);
 
             }
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
+        //Code to handle Vessels
+        private void GetVesselList(string vesselListPath)
+        {
+            vessels = System.IO.File.ReadAllLines(vesselListPath);
+        }
+
+        private void SubmarineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void SelectSubmarinesApply_Click(object sender, RoutedEventArgs e)
+        {
+            selectedVessels.Clear();
+            foreach(object selectedItem in SubmarineListBox.SelectedItems)
+            {
+                selectedVessels.Add(selectedItem.ToString());
+            }
+
+            CreateNewVesselsList();
+        }
+
+        private void CreateNewVesselsList()
+        {
+            System.IO.File.WriteAllLines(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + submarineListPath), selectedVessels);
         }
 
 
+        private void ModifyCampaignFiles()
+        {
 
-
-        //Code to handle Vessels
+        }
     }
-
-
 }

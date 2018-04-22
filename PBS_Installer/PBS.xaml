@@ -19,15 +19,20 @@
             </TabItem>
             <TabItem Header="Select Submarines">
                 <Grid x:Name="SubmarinesListBox" Background="#FFE5E5E5">
-
-                    <ListBox HorizontalAlignment="Left" Height="271" VerticalAlignment="Top" Width="491" Margin="10,10,0,0" SelectionChanged="ListBox_SelectionChanged"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="202*"/>
+                        <ColumnDefinition Width="60*"/>
+                        <ColumnDefinition Width="36*"/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="201*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="SubmarineListBox" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="427" Margin="10,35,0,0" Grid.ColumnSpan="5" SelectionChanged="SubmarineListBox_SelectionChanged" SelectionMode="Multiple"/>
+                    <Button x:Name="SelectSubmarinesApply" Content="Apply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Grid.Column="4" Margin="137,261,0,0" Click="SelectSubmarinesApply_Click"/>
                 </Grid>
 
             </TabItem>
             <TabItem Header="Select Campaigns">
-                <Grid Background="#FFE5E5E5">
-                    <ListBox HorizontalAlignment="Left" Height="271" VerticalAlignment="Top" Width="491" Margin="10,10,0,0"/>
-                </Grid>
+                <Grid Background="#FFE5E5E5"/>
 
             </TabItem>
             <TabItem Header="Install">

@@ -1,0 +1,33 @@
+//The Hunted (USSR) - CaptainX3
+
+UseTerrain=TRUE
+MapCoordinates=1033,1704
+MapNavigationData=campaign/images/maps/norwegian_sea_navmap
+MapElevationData=campaign/images/maps/norwegian_sea_bathymetry
+WorldObjectsData=campaign/maps/norwegian_sea_world_objects
+
+//Environment
+Date=14 JAN 1983
+Hemisphere=North
+Time=0900
+UsePresetEnvironment=FALSE
+Weather=Snow
+SeaState=Strong Breeze
+DuctStrength=Moderate
+LayerStrength=Moderate
+
+//Enemy Ships
+NumberOfEnemyUnits=1-4
+CombatBehaviour=OFFENSIVE
+EnemyShipClasses=usn_ssn_los_angeles|usn_ssn_los_angeles_2|usn_ssn_los_angeles_688i|usn_ssn_seawolf|usn_ssn_virginia|usn_ssn_narwhal|usn_ssn_sturgeon|usn_ssn_permit|usn_ssn_skipjack
+FormationCruiseSpeed=12
+
+//Enemy Aircraft
+NumberOfHelicopters=0
+HelicopterType=wp_helix
+NumberOfAircraft=0
+AircraftType=wp_il-38_may
+
+PlayerVessels=rus_ssbn_yankee,rus_ssbn_delta3,rus_ssbn_delta4,rus_ssbn_borei,rus_ssbn_typhoon,rus_ssbn_redoctober,rus_ssbn_redoctober_silent,rus_ssbn_borei,chn_ssbn_type092
+
+OtherVessels=usn_ssn_los_angeles,usn_ssn_los_angeles_2,usn_ssn_los_angeles_688i,usn_ssn_seawolf,usn_ssn_virginia,usn_ssn_narwhal,usn_ssn_sturgeon,usn_ssn_permit,usn_ssn_skipjack,biologic_blue_whale,biologic_humpback_whale,civ_fv_trawler,civ_mv_ice_breaker,civ_mv_oiler,civ_mv_large_cargo,civ_mv_large_cargo2,civ_mv_small_cargo,civ_mv_small_cargo2,civ_mv_small_cargo3

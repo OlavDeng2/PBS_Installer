@@ -1,0 +1,4 @@
+[Weapon Reference]
+WeaponName=CY-1
+WeaponDescriptiveName=CY-1 Anti-Submarine Rocket
+WeaponDescription=The CY-1 is a Chinese anti-submarine rocket carried on a variety of platforms and it's similare to the USN ASROC. The CY-1 is basically an anti-submarine torpedo, Yu-7 class, delivered by a ballistic rocket. The delivery vehicle features four small stabilising fins and four control surfaces, and is powered by a solid-fuel rocket motor.

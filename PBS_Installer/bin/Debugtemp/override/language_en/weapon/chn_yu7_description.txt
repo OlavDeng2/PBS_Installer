@@ -1,0 +1,4 @@
+[Weapon Reference]
+WeaponName=Yu-7
+WeaponDescriptiveName=Yu-7
+WeaponDescription=The Yu-7 light-weight torpedo is similari in performances to the USN Mk.46 torpedo and the A.244-S torpedo.

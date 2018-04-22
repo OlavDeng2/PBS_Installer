@@ -1,0 +1,9 @@
+[Unit Reference]
+ShipClass=Tang
+Description=[USA] Tang Class SS (1984 Era)
+History=Self Noise Rating: 152 db\nEscape Depth: 500 ft\n\nThe Tang Class submarines were developed from the Greater Underwater Propulsion Power Program (GUPPY) conversion program for World War II submarines, which incorporated stolen German Type XXI U-boat technology into the United States Navy's submarine design. They comprised the state of the art in post-World War II conventionally powered submarine design; some of their features were incorporated into the nuclear-powered submarines that replaced them in the 1950s and beyond.
+
+[Player Ship Instances]
+PlayerClassNames=Tang, Trigger, Wahoo, Trout, Gudgeon, Harder
+
+PlayerClassHullNumbers=SS-563,SS-564,SS-565,SS-566,SS-567

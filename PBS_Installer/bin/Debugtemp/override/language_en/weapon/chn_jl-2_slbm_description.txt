@@ -1,0 +1,4 @@
+[Weapon Reference]
+WeaponName=JL-2 SLBM
+WeaponDescriptiveName=JL-2 (SLBM)
+WeaponDescription=The JL-2 (Chinese: 巨浪-2; pinyin: Jù Làng-2; literally: "Giant Wave 2", NATO reporting name CSS-NX-14) is a Chinese second-generation intercontinental-range submarine-launched ballistic missile (SLBM) slated for deployment aboard the People's Liberation Army Navy's Type 094 submarine. It succeeds the JL-1 SLBM deployed on the Type 092 submarine. This missile will, for the first time, allow Chinese SSBNs to target portions of the United States from operating areas located near the Chinese coast.\n\nIn-game range, 275000 yards

@@ -1,0 +1,4 @@
+[Weapon Reference]
+WeaponName=Yu-1
+WeaponDescriptiveName=Yu-1 Torpedo
+WeaponDescription=The Yu-1 torpedo was the first Chinese-built steam-powered torpedo; it was a development of the unguided straight-running Soviet ASuW Type 53 torpedo. It was type classified in September 1971. Later on was developed a version with passive acoustic homing and ASW capabilities.

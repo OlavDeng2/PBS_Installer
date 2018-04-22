@@ -1,0 +1,4 @@
+﻿[Weapon Reference]
+WeaponName=CJ-10
+WeaponDescriptiveName=CJ-10 Land-Attack Missile
+WeaponDescription=The CJ-10 is a second-generation Chinese land-attack missile. It is derived from the Kh-55 missile.

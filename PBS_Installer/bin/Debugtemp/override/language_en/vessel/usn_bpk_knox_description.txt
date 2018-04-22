@@ -1,0 +1,7 @@
+[Unit Reference]
+ShipClass=Knox
+Description=Knox Class Anti-Submarine Ship
+DefensiveWeapons=RIM-7
+OffensiveWeapons=ASROC ASW Missiles\nMK-42 DP Guns\nASW Torpedoes
+Aircraft=1 SH-2F ASW helicopter
+History=The 46 ships of the Knox class were the largest, last and most numerous of the US Navy’s second-generation ASW escorts. The lead ship of the class was USS Knox (FF-1052), laid down 5 October 1965 and commissioned on 12 April 1969, at Todd Shipyards in Seattle. Planned as the follow-on to the twin 5-inch gun armed Garcia Class frigates and the Tartar missile-equipped Brooke Class frigates, their initial design incorporated the prior classes' pressure-fired boilers in a similar-sized hull designed around the massive bow-mounted AN/SQS-26 sonar, with increased endurance and reduced crew size. Anti-submarine armament was to consist of ASROC anti submarine missiles together with the DASH drone helicopter, while defensive armament was to be the RIM-46 Sea Mauler short range anti-aircraft missile backed up by a single 5-inch gun.
