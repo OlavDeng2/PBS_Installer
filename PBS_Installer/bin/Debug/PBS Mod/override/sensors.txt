@@ -416,24 +416,6 @@ SonarBaffle=130
 SonarNoisePerKnot=1
 SonarOutput=280
 
-//SonarModel=usn_tb_23
-//SonarType=TOWED
-//SonarFrequencies=VL,L
-//SonarActiveSensitivity=0
-//SonarPassiveSensitivity=51
-//SonarBaffle=FALSE
-//SonarNoisePerKnot=3
-//SonarOutput=0
-
-//SonarModel=usn_tb_29
-//SonarType=TOWED
-//SonarFrequencies=VL,L
-//SonarActiveSensitivity=0
-//SonarPassiveSensitivity=54
-//SonarBaffle=FALSE
-//SonarNoisePerKnot=2
-//SonarOutput=0
-
 SonarModel=ksm_sonderapparat
 SonarType=ACTIVE/PASSIVE
 SonarFrequencies=M
@@ -537,7 +519,6 @@ SonarOutput=0
 
 // -------------------------------------------------------------------- End New Sensors --------------------------------------------------------------------
 
-
 SonarModel=usn_an_bqr_2
 SonarType=PASSIVE
 SonarFrequencies=M
@@ -619,6 +600,15 @@ SonarBaffle=FALSE
 SonarNoisePerKnot=3
 SonarOutput=0
 
+SonarModel=plan_sjd_3
+SonarType=ACTIVE
+SonarFrequencies=H
+SonarActiveSensitivity=22
+SonarPassiveSensitivity=18
+SonarBaffle=150
+SonarNoisePerKnot=0.5
+SonarOutput=210
+
 SonarModel=plan_eh_5
 SonarType=ACTIVE/PASSIVE
 SonarFrequencies=H,H
@@ -658,11 +648,30 @@ SonarOutput=220
 SonarModel=plan_ess_1
 SonarType=TOWED
 SonarFrequencies=M,M
-SonarActiveSensitivity=26
+SonarActiveSensitivity=32
 SonarPassiveSensitivity=32
 SonarBaffle=FALSE
 SonarNoisePerKnot=1
 SonarOutput=220
+
+SonarModel=plan_tsm_2233
+SonarType=ACTIVE/PASSIVE
+SonarFrequencies=L,L
+SonarActiveSensitivity=28
+SonarPassiveSensitivity=40
+SonarBaffle=150
+SonarNoisePerKnot=1
+SonarOutput=230
+
+SonarModel=plan_ss_12
+SonarType=DIPPING
+SonarFrequencies=M
+SonarActiveSensitivity=32
+SonarPassiveSensitivity=32
+SonarBaffle=FALSE
+SonarNoisePerKnot=0
+SonarOutput=220
+
 
 SonarModel=plan_sqc_1
 SonarType=ACTIVE/PASSIVE
@@ -673,14 +682,6 @@ SonarBaffle=150
 SonarNoisePerKnot=1
 SonarOutput=230
 
-SonarModel=plan_tsm_2233
-SonarType=ACTIVE/PASSIVE
-SonarFrequencies=L,L
-SonarActiveSensitivity=28
-SonarPassiveSensitivity=40
-SonarBaffle=150
-SonarNoisePerKnot=1
-SonarOutput=230
 
 SonarModel=wp_bull_horn
 SonarType=ACTIVE/PASSIVE
@@ -740,6 +741,15 @@ SonarModel=wp_shark_gill
 SonarType=ACTIVE/PASSIVE
 SonarFrequencies=L,L
 SonarActiveSensitivity=28
+SonarPassiveSensitivity=40
+SonarBaffle=150
+SonarNoisePerKnot=1
+SonarOutput=235
+
+SonarModel=wp_amfora
+SonarType=ACTIVE/PASSIVE
+SonarFrequencies=L,L
+SonarActiveSensitivity=32
 SonarPassiveSensitivity=40
 SonarBaffle=150
 SonarNoisePerKnot=1
@@ -817,6 +827,15 @@ SonarBaffle=FALSE
 SonarNoisePerKnot=1
 SonarOutput=220
 
+SonarModel=wp_amfora_ta
+SonarType=TOWED
+SonarFrequencies=L
+SonarActiveSensitivity=0
+SonarPassiveSensitivity=54
+SonarBaffle=FALSE
+SonarNoisePerKnot=1
+SonarOutput=220
+
 SonarModel=wp_horse_jaw
 SonarType=ACTIVE/PASSIVE
 SonarFrequencies=L,L
@@ -834,8 +853,6 @@ SonarPassiveSensitivity=37
 SonarBaffle=150
 SonarNoisePerKnot=1
 SonarOutput=220
-
-// WP ASW HELO SONOBUOYS
 
 SonarModel=wp_rgb_56
 SonarType=SONOBUOY
@@ -855,11 +872,6 @@ SonarBaffle=FALSE
 SonarNoisePerKnot=0
 SonarOutput=0
 
-//wp_rgb_73=RGB-73=Third generation sonobuoy RGB-NM-1 Zeton
-//unsure of the NATO reporting name
-//unsure of whether it's even coded RGB-73 - this is just by analogy
-//assume it's one step up (based on the increased range, 5dB up_
-//assume it's Medium frequency - on no evidence whatsoever! :-)
 SonarModel=wp_rgb_73
 SonarType=SONOBUOY
 SonarFrequencies=M
@@ -869,13 +881,6 @@ SonarBaffle=FALSE
 SonarNoisePerKnot=0
 SonarOutput=0
 
-// WP FIXED WING ASW SONOBUOYS
-
-// non-directional proximity only "omni" sonobuoy RGB-1 
-// used for barriers and 'routing' (channeling?) subs
-// not clear if game models non-directional buoys?
-// does not appear in any original game loadouts - did the Devs choose not to use it?
-// NB stats are identical to wp_bm_2 - does the game engine hard code any differences?
 SonarModel=wp_bm_1
 SonarType=SONOBUOY
 SonarFrequencies=M
@@ -885,7 +890,6 @@ SonarBaffle=FALSE
 SonarNoisePerKnot=0
 SonarOutput=0
 
-// RGB-2 passive directional sonobuoy
 SonarModel=wp_bm_2
 SonarType=SONOBUOY
 SonarFrequencies=M
@@ -895,7 +899,6 @@ SonarBaffle=FALSE
 SonarNoisePerKnot=0
 SonarOutput=0
 
-// RGB-3 active sonobuoy (expensive and unreliable)
 SonarModel=wp_bm_3
 SonarType=SONOBUOY
 SonarFrequencies=M
@@ -905,60 +908,6 @@ SonarBaffle=FALSE
 SonarNoisePerKnot=0
 SonarOutput=200
 
-// USN active sonobuoy DICASS AN/SSQ-62 - Late 70s
-SonarModel=usn_ssq62
-SonarType=SONOBUOY
-SonarFrequencies=M
-SonarActiveSensitivity=28
-SonarPassiveSensitivity=0
-SonarBaffle=FALSE
-SonarNoisePerKnot=0
-SonarOutput=200
-
-// USN active sonobuoy CASS AN/SSQ-47 - Late 60s
-SonarModel=usn_ssq47
-SonarType=SONOBUOY
-SonarFrequencies=M
-SonarActiveSensitivity=21
-SonarPassiveSensitivity=0
-SonarBaffle=FALSE
-SonarNoisePerKnot=0
-SonarOutput=200
-
-// USN passive sonobuoy LOFAR AN/SSQ-38 - 60s
-SonarModel=usn_ssq38
-SonarType=SONOBUOY
-SonarFrequencies=M
-SonarActiveSensitivity=0
-SonarPassiveSensitivity=25
-SonarBaffle=FALSE
-SonarNoisePerKnot=0
-SonarOutput=0
-
-// USN passive sonobuoy DIFAR AN/SSQ-53A - Late 60s
-SonarModel=usn_ssq53a
-SonarType=SONOBUOY
-SonarFrequencies=M
-SonarActiveSensitivity=0
-SonarPassiveSensitivity=28
-SonarBaffle=FALSE
-SonarNoisePerKnot=0
-SonarOutput=0
-
-// USN passive sonobuoy DIFAR AN/SSQ-53B - Mid 80s
-SonarModel=usn_ssq53b
-SonarType=SONOBUOY
-SonarFrequencies=M
-SonarActiveSensitivity=0
-SonarPassiveSensitivity=32
-SonarBaffle=FALSE
-SonarNoisePerKnot=0
-SonarOutput=0
-
-// WP DIPPING SONARS
-
-//adding elk tail dipping sonar for early campaign Ka-25
-// assuming one step down from stork tail in Sensitivity and Output
 SonarModel=wp_elk_tail
 SonarType=DIPPING
 SonarFrequencies=H
@@ -977,19 +926,6 @@ SonarBaffle=FALSE
 SonarNoisePerKnot=0
 SonarOutput=210
 
-//base stork tail foal_tail dipping sonar for Ka-25 and Ka-27 
-//(not correct for Ka-27 or early Ka-25)
-// Eastern sources refer to VGS-2 Oka "Stork Tail"
-// Probably we should change the name globally to wp_stork_tail at some point
-SonarModel=wp_foal_stork_tail
-SonarType=DIPPING
-SonarFrequencies=H
-SonarActiveSensitivity=26
-SonarPassiveSensitivity=26
-SonarBaffle=FALSE
-SonarNoisePerKnot=0
-SonarOutput=210
-
 SonarModel=wp_lamb_tail
 SonarType=DIPPING
 SonarFrequencies=M
@@ -999,28 +935,61 @@ SonarBaffle=FALSE
 SonarNoisePerKnot=0
 SonarOutput=220
 
-// SH3D Dipping Sonar
-// should be only active, small passive sensitivity given for gameplay
-SonarModel=usn_an_aqs-13
-SonarType=DIPPING
-SonarFrequencies=H
-SonarActiveSensitivity=28
-SonarPassiveSensitivity=14
-SonarBaffle=FALSE
-SonarNoisePerKnot=0
-SonarOutput=210
-
-// SH60F Dipping Sonar
-SonarModel=usn_an_aqs-13f
-SonarType=DIPPING
-SonarFrequencies=H
-SonarActiveSensitivity=32
-SonarPassiveSensitivity=32
-SonarBaffle=FALSE
-SonarNoisePerKnot=0
-SonarOutput=210
-
 [RADAR]
+RADARModel=usn_bps_12
+RADARRange=60000
+
+RADARModel=usn_bps_15
+RADARRange=60000
+
+RADARModel=usn_bps_14_15
+RADARRange=60000
+
+RADARModel=usn_bps_15A
+RADARRange=60000
+
+RADARModel=plan_klc_1
+RADARRange=100000
+
+RADARModel=wp_don_kay
+RADARRange=50500
+
+RADARModel=wp_spin_through
+RADARRange=40500
+
+RADARModel=wp_snoop_head
+RADARRange=40500
+
+RADARModel=wp_snoop_tray
+RADARRange=40500
+
+RADARModel=wp_snoop_plate
+RADARRange=30400
+
+RADARModel=wp_snoop_slab
+RADARRange=30400
+
+RADARModel=wp_snoop_pair
+RADARRange=44000
+
+RADARModel=wp_mushroom
+RADARRange=90000
+
+RADARModel=wp_octopus
+RADARRange=100000
+
+RADARModel=wp_wet_eye
+RADARRange=120000
+
+RADARModel=wp_korshun
+RADARRange=140000
+
+RADARModel=wp_korshun_k
+RADARRange=160000
+
+RADARModel=plan_aps_504
+RADARRange=140000
+
 RADARModel=jmsdf_zps_6
 RADARRange=42533
 

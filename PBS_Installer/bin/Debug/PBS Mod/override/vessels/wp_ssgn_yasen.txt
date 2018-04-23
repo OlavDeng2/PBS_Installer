@@ -43,6 +43,7 @@ RADARSignature=SMALL
 TorpedoTypes=wp_ugst,russian_moss,wp_s10,wp_ss-n-16
 TorpedoNumbers=27,5,0,0
 TorpedoTubes=11
+NumberOfWires=10
 TubeConfig=1,1,1,1,1,1,1,1,1,1,1
 TorpedoTubeSize=21
 TubeReloadTime=30
@@ -118,16 +119,16 @@ MeshProp=wp_ssgn_yasen_prop
 [Model]
 ModelFile=ships/usn_ssn_permit/usn_ssn_permit
 Material=ships/materials/usn_masts
-MeshPosition=0,0.030,0.230
-MastHeight=0.08
+MeshPosition=0,0.01,0.53
+MastHeight=0.125
 MeshMast=usn_ssn_permit_periscope
 
-MeshPosition=0,0.020,0.200
-MastHeight=0.08
+MeshPosition=0,0.01,0.5
+MastHeight=0.1
 MeshMast=usn_ssn_permit_esm_mast
 
-MeshPosition=0,0.020,0.170
-MastHeight=0.08
+MeshPosition=0,0.01,0.47
+MastHeight=0.1
 MeshMast=usn_ssn_permit_radar_mast
 
 [Weapon Systems]
@@ -203,6 +204,9 @@ TorpedoEffectPosition=0,0.0785,0.3516
 MeshRotation=0,0,0
 MeshPosition=0,-0.056,-0.533
 MeshNoisemakerMount=FALSE
+
+MeshPosition=0,0,0
+ModelFile=ships/wp_ssgn_yasen/wp_ssgn_yasen
 
 //Wake
 MeshPosition=0,0,0
