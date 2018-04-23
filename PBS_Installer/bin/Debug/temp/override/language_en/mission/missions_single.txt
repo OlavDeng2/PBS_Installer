@@ -13,7 +13,7 @@
 <color=White>Beating The Odds</color>
 <color=White>Skirmish In The Denmark Strait</color>
 <color=White>The Bastion Gambit</color>
-<color=White>Junks On Patrol</color>
+<color=White>Junks On Parade</color>
 <color=White>Strike From The Sea</color>
 <color=White>Stalking The Red Bear</color>
 <color=Orange>The Sole Seeker</color>
@@ -26,16 +26,6 @@
 <color=Orange>The Lone Sabre</color>
 <color=Orange>Creeping Hunter</color>
 <color=Orange>Earn Your Keep</color>
-<color=Black>Arctic Takeover (RUS)</color>
-<color=Black>Second Strike (NATO)</color>
-<color=Black>Second Strike (RUS)</color>
 <color=Cyan>The Great Escape (NATO)</color>
-<color=Black>The Great Escape (RUS)</color>
 <color=Cyan>Oil Rig Insertion (NATO)</color>
-<color=Black>Oil Rig Insertion (RUS)</color>
-<color=Black>Revenge Is A Dish... (NATO)</color>
-<color=Black>Revenge Is A Dish... (RUS)</color>
 <color=Cyan>Convoy Strike (NATO)</color>
-<color=Black>Convoy Strike (RUS)</color>
-<color=Black>Lurking Hunter - 1968 (NATO)</color>
-<color=Black>Lurking Hunter - 1968 (RUS)</color>

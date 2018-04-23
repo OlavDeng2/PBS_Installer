@@ -5,7 +5,7 @@ MapCoordinates=2468,1484
 MapNavigationData=campaign/images/maps/norwegian_sea_navmap
 MapElevationData=campaign/images/maps/norwegian_sea_bathymetry
 WorldObjectsData=campaign/maps/norwegian_sea_world_objects
-VesselsAndTraffic=campaign/maps/norwegian_sea_traffic
+VesselsAndTraffic=campaign/maps/norwegian_single_mission_traffic
 
 //Environment
 Date=10 NOV 1984

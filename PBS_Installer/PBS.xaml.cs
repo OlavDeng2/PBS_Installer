@@ -59,15 +59,26 @@ namespace PBS_Installer
         public MainWindow()
         {
             InitializeComponent();
+            //if directory already exists, clear it so as to not cause unforseen problems
+            if(Directory.Exists(Directory.GetCurrentDirectory() + temporaryFiles))
+            {
+                Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
+            }
+            Directory.CreateDirectory(Directory.GetCurrentDirectory() + temporaryFiles);
 
-            Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
+            //initialize the right path
+            installModPath = coldWatersFolderPath + modInstallPath;
+            installFolder = new DirectoryInfo(installModPath);
+            Directory.CreateDirectory(Directory.GetCurrentDirectory() + temporaryFiles);
+            temporaryFiles = (Directory.GetCurrentDirectory() + temporaryFiles);
 
+            DirectoryCopy(Directory.GetCurrentDirectory() + modFilesPath, System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles), true);
 
 
             //TODO: Make the bellow into a function
             GetVesselList(Directory.GetCurrentDirectory() + modFilesPath + submarineListPath);
             GetMissionsList(Directory.GetCurrentDirectory() + modFilesPath + missionsListPath);
-            GetCampaignList();
+            GetCampaignList(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + campaignPath));
             
             foreach(string vessel in vessels)
             {
@@ -87,14 +98,7 @@ namespace PBS_Installer
             }
             CampaignListBox.SelectAll();
 
-            //initialize the right path
-            installModPath = coldWatersFolderPath + modInstallPath;
-            installFolder = new DirectoryInfo(installModPath);
-            Directory.CreateDirectory(Directory.GetCurrentDirectory() + temporaryFiles);
-            temporaryFiles = (Directory.GetCurrentDirectory() + temporaryFiles);
-
-            DirectoryCopy(Directory.GetCurrentDirectory() + modFilesPath, System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles), true);
-
+            
 
         }
 
@@ -122,7 +126,11 @@ namespace PBS_Installer
 
         private void InstallButton_Click(object sender, RoutedEventArgs e)
         {
-            Directory.Delete(installModPath, true);
+            //Delete existing mod files to avoid potential errors with the mod
+            if(Directory.Exists(installModPath))
+            {
+                Directory.Delete(installModPath, true);
+            }
             Directory.CreateDirectory(installModPath);
 
             DirectoryCopy(Directory.GetCurrentDirectory() + "\\temp\\override", installModPath, true);
@@ -162,7 +170,11 @@ namespace PBS_Installer
 
         private void UninstallModButton_Click(object sender, RoutedEventArgs e)
         {
-            Directory.Delete(installModPath, true);
+            if(Directory.Exists(installModPath))
+            {
+                Directory.Delete(installModPath, true);
+
+            }
             MessageBox.Show("The more Playable Subs mod is now uninstalled, you can now play vanilla Cold Waters");
         }
 
@@ -214,9 +226,9 @@ namespace PBS_Installer
             System.IO.File.WriteAllLines(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + missionsListPath), selectedMissions);
         }
 
-        private void GetCampaignList()
+        private void GetCampaignList(string campaignLocation)
         {
-            campaigns = Directory.GetDirectories(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + campaignPath), "camp*");
+            campaigns = Directory.GetDirectories(campaignLocation, "camp*");
         }
 
         private void CreateNewCampaignList()
@@ -229,7 +241,6 @@ namespace PBS_Installer
         private void ModifyCampaignFiles()
         {
             //This function should modify the campaign files to take into account the subs that have been added/removed
-            GetCampaignList();
             foreach(string campaign in campaigns)
             {
                 //do the thing
