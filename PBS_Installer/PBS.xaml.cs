@@ -174,16 +174,6 @@ namespace PBS_Installer
             RemoveVessels();
         }
 
-        private void UninstallModButton_Click(object sender, RoutedEventArgs e)
-        {
-            if(Directory.Exists(installModPath))
-            {
-                Directory.Delete(installModPath, true);
-
-            }
-            MessageBox.Show("The more Playable Subs mod is now uninstalled, you can now play vanilla Cold Waters");
-        }
-
         private void SubmarineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
@@ -207,6 +197,15 @@ namespace PBS_Installer
                 selectedMissions.Add(selectedItem.ToString());
             }
             //CreateNewMissionsList();
+        }
+
+        private void UninstallModButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (Directory.Exists(installModPath))
+            {
+                Directory.Delete(installModPath, true);
+            }
+            MessageBox.Show("The more Playable Subs mod is now uninstalled, you can now play vanilla Cold Waters");
         }
 
         //The functions bellow are not handling events directly from the main window
@@ -332,6 +331,7 @@ namespace PBS_Installer
 
         }
 
+        
     }
 
     
