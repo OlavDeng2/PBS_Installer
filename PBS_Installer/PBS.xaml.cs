@@ -41,6 +41,7 @@ namespace PBS_Installer
         private string submarineListPath = "\\override\\vessels\\_vessel_list.txt";
         private string[] vessels;
         List<string> selectedVessels = new List<string>();
+        List<string> vesselsToRemove = new List<string>();
 
         //Missions list
         private string missionPath = "\\override";
@@ -136,6 +137,9 @@ namespace PBS_Installer
             DirectoryCopy(Directory.GetCurrentDirectory() + "\\temp\\override", installModPath, true);
             MessageBox.Show("The More Playable Subs mod is now installed! You can now launch Cold Waters");
             //Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
+
+            
+
         }
 
         private void SelectModFile_Click_1(object sender, RoutedEventArgs e)
@@ -166,6 +170,8 @@ namespace PBS_Installer
             }
 
             CreateNewVesselsList();
+
+            RemoveVessels();
         }
 
         private void UninstallModButton_Click(object sender, RoutedEventArgs e)
@@ -180,7 +186,7 @@ namespace PBS_Installer
 
         private void SubmarineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void CampaignApplyButton_Click(object sender, RoutedEventArgs e)
@@ -291,6 +297,17 @@ namespace PBS_Installer
             }
         }
 
+        private void RemoveVessels()
+        {
+            //add ships not present in the selectedVessels array to the vesselsToRemove list
+            vesselsToRemove = vessels.Except(selectedVessels).ToList();
+
+            //Loop through all the files the vessels might appear in, and then remove them
+            //The files can be found in following locations:
+            // override\campaign\campaign001 etc.
+            // override\campaign\maps 
+
+        }
         
     }
 
