@@ -307,7 +307,18 @@ namespace PBS_Installer
             // override\campaign\campaign001 etc.
             // override\campaign\maps
             string[] campaignMapFiles = Directory.GetFiles(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "\\override\\campaign\\maps"));
-            
+            string[] campaignSummaryFiles = Directory.GetFiles((System.IO.Path.Combine(Directory.GetCurrentDirectory(), "\\override\\campaign")), "summary", SearchOption.AllDirectories);
+
+            foreach (string summaryFile in campaignSummaryFiles)
+            {
+                string[] summaryFileData = System.IO.File.ReadAllLines(summaryFile);
+
+                foreach(string line in summaryFileData)
+                {
+                    //compare the vesselsToRemove list with line, remove whatever matches. (do note that we need to remove the commas at the end, if it exists, as well)
+
+                }
+            }
 
             foreach (string campaignFile in campaignMapFiles)
             {
