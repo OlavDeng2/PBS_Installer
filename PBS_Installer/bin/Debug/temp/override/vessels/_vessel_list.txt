@@ -1,3 +1,4 @@
+usn_ssn_los_angeles
 usn_ssn_narwhal
 usn_ssn_permit_68
 usn_ssn_permit
@@ -130,4 +131,3 @@ civ_oilrig
 civ_spar_rig
 biologic_blue_whale
 biologic_humpback_whale
-usn_ssn_los_angeles

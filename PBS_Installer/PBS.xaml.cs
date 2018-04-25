@@ -220,7 +220,7 @@ namespace PBS_Installer
 
         private void CreateNewVesselsList()
         {
-            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + submarineListPath), selectedVessels.ToArray());
+            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + submarineListPath), selectedVessels);
         }
 
         private void GetMissionsList(string missionListLocation)
@@ -230,9 +230,8 @@ namespace PBS_Installer
 
         private void CreateNewMissionsList()
         {
-            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + missionsListPath), selectedMissions.ToArray());
-            //strgroupids = strgroupids.Remove(strgroupids.Length - 1); 
-            //Use the above to remove the last character
+            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + missionsListPath), selectedMissions);
+            
         }
 
         private void GetCampaignList(string campaignLocation)
@@ -342,7 +341,7 @@ namespace PBS_Installer
                     }
 
                     //when the above foreach loop is done, write the newSummaryFileData to the file
-                    WriteLinesToFile(summaryFile, newSummaryFileData.ToArray());
+                    WriteLinesToFile(summaryFile, newSummaryFileData);
                 }
 
             }
@@ -365,7 +364,7 @@ namespace PBS_Installer
                     newCampaignFileData.Add(currentLine);
                 }
 
-                WriteLinesToFile(campaignFile, newCampaignFileData.ToArray());
+                WriteLinesToFile(campaignFile, newCampaignFileData);
             }
 
         }
@@ -385,9 +384,16 @@ namespace PBS_Installer
             return string.Join(",", diff);
         }
 
-        private void WriteLinesToFile(string fileLocation, string[] contents)
+        private void WriteLinesToFile(string fileLocation, List<string> contents)
         {
+            string lastLine = contents.Last<string>();
+            contents.Remove(lastLine);
+
             System.IO.File.WriteAllLines(fileLocation, contents);
+            System.IO.File.AppendAllText(fileLocation, lastLine);
+
+            //strgroupids = strgroupids.Remove(strgroupids.Length - 1); 
+            //Use the above to remove the last character
         }
     }
 }
