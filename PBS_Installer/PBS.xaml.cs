@@ -27,64 +27,60 @@ namespace PBS_Installer
         //The paths of the files within this program
         private string installerPath;
         private string temporaryFiles = "\\temp";
+        private string temporaryFilesFullPath;
         private string modFilesPath = "\\PBS mod";
+        private string modFilesFullPath;
 
         //The install paths for the game, and the mod
         private string coldWatersFolderPath = "C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Cold Waters";
         private string modInstallPath = "\\ColdWaters_Data\\StreamingAssets\\override";
+        private string modInstallFullPath;
 
-        //Improve the naming, this is no good
-        private string installModPath;
-
-        private DirectoryInfo installFolder;
 
         //Default Vessels list
         private string defaultSubmarineListPath = "\\override\\vessels\\_vessel_list.txt";
+        private string defaultSubmarinesListFullPath;
         private string[] defaultVessels;
 
         //Optional Vessels list
-        private string optionalVesselsListPath = "\\override";
+        private string optionalVesselsListPath = "\\override\\vessels\\_vessel_optional_list.txt";
+        private string optionalVesselsListFullPath;
         private string[] optionalVessels;
         List<string> selectedVessels = new List<string>();
         List<string> vesselsToRemove = new List<string>();
 
-        //Missions list
-        private string missionPath = "\\override";
-        private string missionsListPath = "\\override\\language_en\\mission\\missions_single.txt";
-        private string[] missions;
-        List<string> selectedMissions = new List<string>();
-
-        //Campaign folder
-        private string campaignPath = "\\override\\campaign";
-        private string[] campaigns;
-        List<string> selectedCampaigns = new List<string>();
-        List<string> campaignsToDelete = new List<string>();
-
-
         //Initialize the MainWindow
         public MainWindow()
         {
+            installerPath = Directory.GetCurrentDirectory();
+
             InitializeComponent();
 
-            installerPath = Directory.GetCurrentDirectory();
+            //Initialize folder paths
+            //installerPath = Directory.GetCurrentDirectory();
+            
+
+            temporaryFiles = System.IO.Path.Combine(installerPath, temporaryFiles);
+            modFilesFullPath = (installerPath + modFilesPath);//System.IO.Path.Combine(installerPath, modFilesPath);
+            modInstallFullPath = (coldWatersFolderPath + modInstallPath);//System.IO.Path.Combine(coldWatersFolderPath, modInstallPath);
+            defaultSubmarinesListFullPath = (installerPath + temporaryFiles + defaultSubmarineListPath); //System.IO.Path.Combine(installerPath, temporaryFiles, defaultSubmarineListPath);
+            optionalVesselsListFullPath = (installerPath + temporaryFiles + optionalVesselsListPath); //System.IO.Path.Combine(installerPath, temporaryFiles, optionalVesselsListPath);
+            temporaryFilesFullPath = (installerPath + temporaryFiles);//System.IO.Path.Combine(installerPath, temporaryFiles);
+
+
             //if directory already exists, clear it so as to not cause unforseen problems
-            if(Directory.Exists(Directory.GetCurrentDirectory() + temporaryFiles))
+            if (Directory.Exists(temporaryFilesFullPath))
             {
-                Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
+                Directory.Delete(temporaryFilesFullPath, true);
             }
-            Directory.CreateDirectory(Directory.GetCurrentDirectory() + temporaryFiles);
 
-            //initialize the right path
-            installModPath = coldWatersFolderPath + modInstallPath;
-            installFolder = new DirectoryInfo(installModPath);
-            Directory.CreateDirectory(Directory.GetCurrentDirectory() + temporaryFiles);
-            temporaryFiles = (Directory.GetCurrentDirectory() + temporaryFiles);
+            //Create temporary folder
+            Directory.CreateDirectory(temporaryFiles);
 
-            DirectoryCopy(Directory.GetCurrentDirectory() + modFilesPath, System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles), true);
+            DirectoryCopy(modFilesFullPath, temporaryFilesFullPath, true);
 
-
-            //TODO: Make the bellow into a function
-            GetDefaultVesselList(Directory.GetCurrentDirectory() + modFilesPath + defaultSubmarineListPath);
+            defaultVessels = ReadFile(defaultSubmarinesListFullPath);
+            optionalVessels = ReadFile(optionalVesselsListFullPath);
             
             foreach(string vessel in optionalVessels)
             {
@@ -108,21 +104,20 @@ namespace PBS_Installer
                 coldWatersFolderPath = folderDialog.SelectedPath;
                 FolderPath.Text = coldWatersFolderPath;
                 //</ Selected Path >
-                installModPath = coldWatersFolderPath + modInstallPath;
-                installFolder = new DirectoryInfo(installModPath);
+                modInstallFullPath = coldWatersFolderPath + modInstallPath;
             }
         }
 
         private void InstallButton_Click(object sender, RoutedEventArgs e)
         {
             //Delete existing mod files to avoid potential errors with the mod
-            if(Directory.Exists(installModPath))
+            if(Directory.Exists(modInstallFullPath))
             {
-                Directory.Delete(installModPath, true);
+                Directory.Delete(modInstallFullPath, true);
             }
-            Directory.CreateDirectory(installModPath);
+            Directory.CreateDirectory(modInstallFullPath);
 
-            DirectoryCopy(Directory.GetCurrentDirectory() + "\\temp\\override", installModPath, true);
+            DirectoryCopy(installerPath + "\\temp\\override", modInstallFullPath, true);
             MessageBox.Show("The More Playable Subs mod is now installed! You can now launch Cold Waters");
             //Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
         }
@@ -166,9 +161,9 @@ namespace PBS_Installer
 
         private void UninstallModButton_Click_1(object sender, RoutedEventArgs e)
         {
-            if (Directory.Exists(installModPath))
+            if (Directory.Exists(modInstallFullPath))
             {
-                Directory.Delete(installModPath, true);
+                Directory.Delete(modInstallFullPath, true);
             }
             MessageBox.Show("The more Playable Subs mod is now uninstalled, you can now play vanilla Cold Waters");
         }
@@ -176,14 +171,14 @@ namespace PBS_Installer
         //The functions bellow are not handling events directly from the main window
 
         //TODO: bellow functions can easily be consolidated into fewer functions. 
-        private void GetDefaultVesselList(string vesselListPath)
+        private string[] ReadFile(string path)
         {
-            defaultVessels = System.IO.File.ReadAllLines(vesselListPath);
+            return System.IO.File.ReadAllLines(path);
         }
 
         private void CreateNewVesselsList()
         {
-            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + defaultSubmarineListPath), selectedVessels);
+            WriteLinesToFile(installerPath + temporaryFiles + defaultSubmarineListPath, selectedVessels);
         }
         
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
@@ -287,6 +282,7 @@ namespace PBS_Installer
 
 
             //single missions
+            //TODO: Modify Single missions
         }
         
         private string GetDifferenceInString(string initialString, string stringToRemove)
