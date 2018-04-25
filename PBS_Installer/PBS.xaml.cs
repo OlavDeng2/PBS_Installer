@@ -211,7 +211,7 @@ namespace PBS_Installer
             //add ships not present in the selectedVessels array to the vesselsToRemove list
             vesselsToRemove = defaultVessels.Except(selectedVessels).ToList();
 
-            //Loop through all the files the vessels might appear in, and then remove them
+            //Loop through all the files the vessels might appear in
             //The files can be found in following locations:
             // override\campaign\campaign001 etc.
             // override\campaign\maps
@@ -241,7 +241,6 @@ namespace PBS_Installer
                         {
                             //For some reason this causes it to be written to the file 4*, investigate
                             currentLine = (currentLine + "," + string.Join(",", selectedVessels));
-                            MessageBox.Show(currentLine);
 
                         }
                         //when above foreach loop is done, add the line to the newSummaryFileData
@@ -278,6 +277,37 @@ namespace PBS_Installer
         private void addVesselsToMissions()
         {
 
+            string[] singleMissionFiles = Directory.GetFiles(installerPath + "\\temp\\override");
+            List<string> singleMissionFilesToEdit = new List<string>();
+            List<string> filesToRemoveFromList = singleMissionFiles.ToList();
+            filesToRemoveFromList = singleMissionFiles.ToList();
+            filesToRemoveFromList.RemoveAll(sm => sm.Contains("single"));
+
+            singleMissionFilesToEdit = singleMissionFiles.Except(filesToRemoveFromList).ToList();
+
+
+            //mission files
+            foreach (string missionFile in singleMissionFilesToEdit)
+            {
+                string[] missionFileData = System.IO.File.ReadAllLines(missionFile);
+                List<string> newMissionFileData = new List<string>();
+                //loop through array
+                foreach (string line in missionFileData)
+                {
+                    string currentLine = line;
+                    string firstWord = currentLine.Split('=')[0];
+
+
+                    //add the vessels in the appropriate file
+                    if (firstWord == "PlayerVessels")
+                    {
+                        currentLine = (currentLine + "," + string.Join(",", selectedVessels));
+                    }
+                    newMissionFileData.Add(currentLine);
+                }
+                WriteLinesToFile(missionFile, newMissionFileData);
+            }
+            
         }
         
         private string GetDifferenceInString(string initialString, string stringToRemove)

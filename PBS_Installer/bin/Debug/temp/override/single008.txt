@@ -30,4 +30,4 @@ HelicopterType=wp_helix
 NumberOfAircraft=2
 AircraftType=wp_il-38_may
 
-PlayerVessels=wp_ssbn_redoctober,wp_ssbn_redoctober_silent
+PlayerVessels=wp_ssbn_redoctober,wp_ssbn_redoctober_silent,Walrus,Shark,Spearfish
