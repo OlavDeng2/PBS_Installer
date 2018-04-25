@@ -133,4 +133,6 @@ civ_oilrig
 civ_spar_rig
 biologic_blue_whale
 biologic_humpback_whale
-Walrus for test
+Walrus
+Spearfish
+Shark

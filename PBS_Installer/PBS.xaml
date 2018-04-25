@@ -14,10 +14,10 @@
         <TabControl HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="2">
             <TabItem Header="Welcome">
                 <Grid Background="#FFE5E5E5">
-                    <TextBlock HorizontalAlignment="Left" Margin="53,10,0,0" TextWrapping="Wrap" Text="Welcome to PBS installer" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="53,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="229" Width="376"><Run Text="Welcome to The More Playable Subs Mod installer for Cold Waters."/><LineBreak/><Run/><LineBreak/><Run Text="This installer will install the core PBS mod as well as any additional vessels you choose in the &quot;Select Additional Submarines Tab&quot;"/></TextBlock>
                 </Grid>
             </TabItem>
-            <TabItem Header="Select Submarines">
+            <TabItem Header="Select Additional Submarines">
                 <Grid x:Name="SubmarinesListBox" Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="202*"/>
@@ -29,6 +29,7 @@
                     </Grid.ColumnDefinitions>
                     <ListBox x:Name="SubmarineListBox" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="427" Margin="10,35,0,0" Grid.ColumnSpan="6" SelectionChanged="SubmarineListBox_SelectionChanged" SelectionMode="Multiple"/>
                     <Button x:Name="SelectSubmarinesApply" Content="Apply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Grid.Column="5" Margin="137,261,0,0" Click="SelectSubmarinesApply_Click"/>
+                    <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="137,54,0,0" TextWrapping="Wrap" Text="Make sure to press apply to ensure that the changes are saved before pressing install" VerticalAlignment="Top" Height="189" Width="54"/>
                 </Grid>
 
             </TabItem>

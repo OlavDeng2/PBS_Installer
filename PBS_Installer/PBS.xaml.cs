@@ -49,6 +49,8 @@ namespace PBS_Installer
         List<string> selectedVessels = new List<string>();
         List<string> vesselsToRemove = new List<string>();
 
+        List<string> modVessels = new List<string>();
+
         //Initialize the MainWindow
         public MainWindow()
         {
@@ -131,7 +133,8 @@ namespace PBS_Installer
             }
 
             CreateNewVesselsList();
-            RemoveVessels();
+            addVesselsToCampaign();
+            addVesselsToMissions();
         }
 
         private void SubmarineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -158,7 +161,7 @@ namespace PBS_Installer
 
         private void CreateNewVesselsList()
         {
-            List<string> modVessels = new List<string>();
+            modVessels.Clear();
             modVessels = defaultVessels.ToList();
             modVessels.AddRange(optionalVessels.ToList());
 
@@ -231,11 +234,15 @@ namespace PBS_Installer
                     foreach (string line in summaryFileData)
                     {
                         string currentLine = line;
-                        //compare the vesselsToRemove list with line, remove whatever matches. (do note that we need to remove the commas at the end, if it exists, as well)
-                        foreach (string vessel in vesselsToRemove)
+
+                        string firstWord = currentLine.Split('=')[0];
+                        //Add the selected vessels in the appropriate files
+                        if (firstWord == "PlayerVessels")
                         {
-                            //line = what is in the line and remove the vessel.
-                            currentLine = GetDifferenceInString(currentLine, vessel);
+                            //For some reason this causes it to be written to the file 4*, investigate
+                            currentLine = (currentLine + "," + string.Join(",", selectedVessels));
+                            MessageBox.Show(currentLine);
+
                         }
                         //when above foreach loop is done, add the line to the newSummaryFileData
                         newSummaryFileData.Add(currentLine);
@@ -254,10 +261,13 @@ namespace PBS_Installer
                 foreach (string line in campaignFileData)
                 {
                     string currentLine = line;
-                    //compare the vesselsToRemove list with line, remove whatever matches. (do note that we need to remove the commas at the end, if it exists, as well)
-                    foreach (string vessel in vesselsToRemove)
+                    string firstWord = currentLine.Split('=')[0];
+
+
+                    //add the vessels in the appropriate file
+                    if (firstWord == "OtherVessels")
                     {
-                        currentLine = GetDifferenceInString(currentLine, vessel);
+                        currentLine = (currentLine + "," + string.Join(",", selectedVessels));
                     }
                     newCampaignFileData.Add(currentLine);
                 }
