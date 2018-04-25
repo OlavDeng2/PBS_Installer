@@ -220,7 +220,7 @@ namespace PBS_Installer
 
         private void CreateNewVesselsList()
         {
-            System.IO.File.WriteAllLines(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + submarineListPath), selectedVessels);
+            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + submarineListPath), selectedVessels.ToArray());
         }
 
         private void GetMissionsList(string missionListLocation)
@@ -230,7 +230,7 @@ namespace PBS_Installer
 
         private void CreateNewMissionsList()
         {
-            System.IO.File.WriteAllLines(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + missionsListPath), selectedMissions);
+            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + missionsListPath), selectedMissions.ToArray());
             //strgroupids = strgroupids.Remove(strgroupids.Length - 1); 
             //Use the above to remove the last character
         }
@@ -310,37 +310,44 @@ namespace PBS_Installer
             // override\campaign\campaign001 etc.
             // override\campaign\maps
             string[] campaignMapFiles = Directory.GetFiles(installerPath + "\\temp\\override\\campaign\\maps");
-            string[] campaignSummaryFiles = Directory.GetFiles(installerPath + "\\temp\\override\\campaign", "summary", SearchOption.AllDirectories);
+            string[] campaignSummaryFolder = Directory.GetDirectories(installerPath + "\\temp\\override\\campaign");
+            List<string> campaignSummaryFiles = new List<string>();
 
-            //For debug purposes
-            MessageBox.Show(installerPath + "\\temp\\override\\campaign");
-
-
-            foreach (string summaryFile in campaignSummaryFiles)
+            //campaign summary folder
+            foreach(string folder in campaignSummaryFolder)
             {
+                
 
-                string[] summaryFileData = System.IO.File.ReadAllLines(summaryFile);
-                List<string> newSummaryFileData = new List<string>();
+                campaignSummaryFiles.AddRange(Directory.GetFiles(folder, "summary.txt"));
 
-                foreach(string line in summaryFileData)
+                foreach (string summaryFile in campaignSummaryFiles)
                 {
-                    string currentLine = line;
-                    //compare the vesselsToRemove list with line, remove whatever matches. (do note that we need to remove the commas at the end, if it exists, as well)
-                    foreach(string vessel in vesselsToRemove)
+
+                    string[] summaryFileData = System.IO.File.ReadAllLines(summaryFile);
+                    List<string> newSummaryFileData = new List<string>();
+
+                    foreach (string line in summaryFileData)
                     {
-                        //line = what is in the line and remove the vessel.
-                        currentLine = GetDifferenceInString(currentLine, vessel);
+                        string currentLine = line;
+                        //compare the vesselsToRemove list with line, remove whatever matches. (do note that we need to remove the commas at the end, if it exists, as well)
+                        foreach (string vessel in vesselsToRemove)
+                        {
+                            //line = what is in the line and remove the vessel.
+                            currentLine = GetDifferenceInString(currentLine, vessel);
+                        }
+
+                        //when above foreach loop is done, add the line to the newSummaryFileData
+                        newSummaryFileData.Add(currentLine);
+
                     }
 
-                    //when above foreach loop is done, add the line to the newSummaryFileData
-                    newSummaryFileData.Add(currentLine);
-
+                    //when the above foreach loop is done, write the newSummaryFileData to the file
+                    WriteLinesToFile(summaryFile, newSummaryFileData.ToArray());
                 }
 
-                //when the above foreach loop is done, write the newSummaryFileData to the file
-                System.IO.File.WriteAllLines(summaryFile, newSummaryFileData);
             }
 
+            //campaign map files
             foreach (string campaignFile in campaignMapFiles)
             {
 
@@ -354,14 +361,11 @@ namespace PBS_Installer
                     foreach (string vessel in vesselsToRemove)
                     {
                         currentLine = GetDifferenceInString(currentLine, vessel);
-                        
-
                     }
                     newCampaignFileData.Add(currentLine);
-
                 }
 
-                System.IO.File.WriteAllLines(campaignFile, newCampaignFileData.ToArray());
+                WriteLinesToFile(campaignFile, newCampaignFileData.ToArray());
             }
 
         }
@@ -379,6 +383,11 @@ namespace PBS_Installer
             diff = set1.Except(set2).ToList();
 
             return string.Join(",", diff);
+        }
+
+        private void WriteLinesToFile(string fileLocation, string[] contents)
+        {
+            System.IO.File.WriteAllLines(fileLocation, contents);
         }
     }
 }
