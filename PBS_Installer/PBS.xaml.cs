@@ -117,29 +117,9 @@ namespace PBS_Installer
             }
             Directory.CreateDirectory(modInstallFullPath);
 
-            DirectoryCopy(installerPath + "\\temp\\override", modInstallFullPath, true);
+            //Note: "\\override" is required to ensure that the contents get copied correctly in there
+            DirectoryCopy(temporaryFilesFullPath + "\\override", modInstallFullPath, true);
             MessageBox.Show("The More Playable Subs mod is now installed! You can now launch Cold Waters");
-            //Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
-        }
-
-        private void SelectModFile_Click_1(object sender, RoutedEventArgs e)
-        {
-            //Open the folder dialog to find the zip file for the mod
-            WinForms.OpenFileDialog fileDialog = new WinForms.OpenFileDialog();
-            fileDialog.DefaultExt = "zip";
-            fileDialog.Filter = "zip files (*.zip)|*.zip";
-            fileDialog.InitialDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
-
-            WinForms.DialogResult result = fileDialog.ShowDialog();
-
-            if (result == WinForms.DialogResult.OK)
-            {
-                //----< Selected Folder >----
-                //< Selected Path >
-                modFilesPath = fileDialog.FileName;
-                //modFilesPath = folderDialog.SelectedPath;
-                //ModFilesPath.Text = modFilesPath;
-            }
         }
 
         private void SelectSubmarinesApply_Click(object sender, RoutedEventArgs e)
@@ -178,7 +158,11 @@ namespace PBS_Installer
 
         private void CreateNewVesselsList()
         {
-            WriteLinesToFile(installerPath + temporaryFiles + defaultSubmarineListPath, selectedVessels);
+            List<string> modVessels = new List<string>();
+            modVessels = defaultVessels.ToList();
+            modVessels.AddRange(optionalVessels.ToList());
+
+            WriteLinesToFile(installerPath + temporaryFiles + defaultSubmarineListPath, modVessels);
         }
         
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
@@ -219,7 +203,7 @@ namespace PBS_Installer
             }
         }
 
-        private void RemoveVessels()
+        private void addVesselsToCampaign()
         {
             //add ships not present in the selectedVessels array to the vesselsToRemove list
             vesselsToRemove = defaultVessels.Except(selectedVessels).ToList();
@@ -234,7 +218,7 @@ namespace PBS_Installer
             List<string> campaignSummaryFiles = new List<string>();
 
             //campaign summary folder
-            foreach(string folder in campaignSummaryFolder)
+            foreach (string folder in campaignSummaryFolder)
             {
                 campaignSummaryFiles.AddRange(Directory.GetFiles(folder, "summary.txt"));
 
@@ -279,10 +263,11 @@ namespace PBS_Installer
                 }
                 WriteLinesToFile(campaignFile, newCampaignFileData);
             }
+        }
 
+        private void addVesselsToMissions()
+        {
 
-            //single missions
-            //TODO: Modify Single missions
         }
         
         private string GetDifferenceInString(string initialString, string stringToRemove)
