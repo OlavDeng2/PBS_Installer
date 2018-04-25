@@ -23,9 +23,13 @@ jmsdf_ss_yushio
 plan_ssn_han
 plan_ssn_shang
 plan_ss_kilo
+plan_ss_ming
 plan_ss_romeo
 plan_ssk_song
+plan_ssbn_xia
 dprk_ss_romeo
+vnm_ss_kilo
+wp_ssn_akula1
 wp_ssn_akula2
 wp_ssn_alfa
 wp_ssn_alfa2

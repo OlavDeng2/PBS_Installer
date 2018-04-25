@@ -25,6 +25,7 @@ namespace PBS_Installer
     public partial class MainWindow : Window
     {
         //The paths of the files within this program
+        private string installerPath;
         private string temporaryFiles = "\\temp";
         private string modFilesPath = "\\PBS mod";
 
@@ -60,6 +61,8 @@ namespace PBS_Installer
         public MainWindow()
         {
             InitializeComponent();
+
+            installerPath = Directory.GetCurrentDirectory();
             //if directory already exists, clear it so as to not cause unforseen problems
             if(Directory.Exists(Directory.GetCurrentDirectory() + temporaryFiles))
             {
@@ -170,7 +173,6 @@ namespace PBS_Installer
             }
 
             CreateNewVesselsList();
-
             RemoveVessels();
         }
 
@@ -229,6 +231,8 @@ namespace PBS_Installer
         private void CreateNewMissionsList()
         {
             System.IO.File.WriteAllLines(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + missionsListPath), selectedMissions);
+            //strgroupids = strgroupids.Remove(strgroupids.Length - 1); 
+            //Use the above to remove the last character
         }
 
         private void GetCampaignList(string campaignLocation)
@@ -305,34 +309,76 @@ namespace PBS_Installer
             //The files can be found in following locations:
             // override\campaign\campaign001 etc.
             // override\campaign\maps
-            string[] campaignMapFiles = Directory.GetFiles(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "\\override\\campaign\\maps"));
-            string[] campaignSummaryFiles = Directory.GetFiles((System.IO.Path.Combine(Directory.GetCurrentDirectory(), "\\override\\campaign")), "summary", SearchOption.AllDirectories);
+            string[] campaignMapFiles = Directory.GetFiles(installerPath + "\\temp\\override\\campaign\\maps");
+            string[] campaignSummaryFiles = Directory.GetFiles(installerPath + "\\temp\\override\\campaign", "summary", SearchOption.AllDirectories);
+
+            //For debug purposes
+            MessageBox.Show(installerPath + "\\temp\\override\\campaign");
+
 
             foreach (string summaryFile in campaignSummaryFiles)
             {
+
                 string[] summaryFileData = System.IO.File.ReadAllLines(summaryFile);
+                List<string> newSummaryFileData = new List<string>();
 
                 foreach(string line in summaryFileData)
                 {
+                    string currentLine = line;
                     //compare the vesselsToRemove list with line, remove whatever matches. (do note that we need to remove the commas at the end, if it exists, as well)
+                    foreach(string vessel in vesselsToRemove)
+                    {
+                        //line = what is in the line and remove the vessel.
+                        currentLine = GetDifferenceInString(currentLine, vessel);
+                    }
+
+                    //when above foreach loop is done, add the line to the newSummaryFileData
+                    newSummaryFileData.Add(currentLine);
 
                 }
+
+                //when the above foreach loop is done, write the newSummaryFileData to the file
+                System.IO.File.WriteAllLines(summaryFile, newSummaryFileData);
             }
 
             foreach (string campaignFile in campaignMapFiles)
             {
+
                 string[] campaignFileData = System.IO.File.ReadAllLines(campaignFile);
+                List<string> newCampaignFileData = new List<string>();
                 //loop through array
                 foreach (string line in campaignFileData)
                 {
+                    string currentLine = line;
                     //compare the vesselsToRemove list with line, remove whatever matches. (do note that we need to remove the commas at the end, if it exists, as well)
+                    foreach (string vessel in vesselsToRemove)
+                    {
+                        currentLine = GetDifferenceInString(currentLine, vessel);
+                        
+
+                    }
+                    newCampaignFileData.Add(currentLine);
+
                 }
+
+                System.IO.File.WriteAllLines(campaignFile, newCampaignFileData.ToArray());
             }
 
         }
 
         
-    }
+        private string GetDifferenceInString(string initialString, string stringToRemove)
+        {
 
-    
+            List<string> diff;
+
+            string[] set1 = initialString.Split(',');
+            string[] set2 = stringToRemove.Split(',');
+
+
+            diff = set1.Except(set2).ToList();
+
+            return string.Join(",", diff);
+        }
+    }
 }
