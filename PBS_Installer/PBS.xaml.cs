@@ -101,9 +101,6 @@ namespace PBS_Installer
                 CampaignListBox.Items.Add(campaign);
             }
             CampaignListBox.SelectAll();
-
-            
-
         }
 
         //The bellow functions handles events from the main window
@@ -124,7 +121,6 @@ namespace PBS_Installer
                 //</ Selected Path >
                 installModPath = coldWatersFolderPath + modInstallPath;
                 installFolder = new DirectoryInfo(installModPath);
-
             }
         }
 
@@ -140,13 +136,11 @@ namespace PBS_Installer
             DirectoryCopy(Directory.GetCurrentDirectory() + "\\temp\\override", installModPath, true);
             MessageBox.Show("The More Playable Subs mod is now installed! You can now launch Cold Waters");
             //Directory.Delete(Directory.GetCurrentDirectory() + temporaryFiles, true);
-
-            
-
         }
 
         private void SelectModFile_Click_1(object sender, RoutedEventArgs e)
         {
+            //Open the folder dialog to find the zip file for the mod
             WinForms.OpenFileDialog fileDialog = new WinForms.OpenFileDialog();
             fileDialog.DefaultExt = "zip";
             fileDialog.Filter = "zip files (*.zip)|*.zip";
@@ -315,8 +309,6 @@ namespace PBS_Installer
             //campaign summary folder
             foreach(string folder in campaignSummaryFolder)
             {
-                
-
                 campaignSummaryFiles.AddRange(Directory.GetFiles(folder, "summary.txt"));
 
                 foreach (string summaryFile in campaignSummaryFiles)
@@ -334,22 +326,17 @@ namespace PBS_Installer
                             //line = what is in the line and remove the vessel.
                             currentLine = GetDifferenceInString(currentLine, vessel);
                         }
-
                         //when above foreach loop is done, add the line to the newSummaryFileData
                         newSummaryFileData.Add(currentLine);
-
                     }
-
                     //when the above foreach loop is done, write the newSummaryFileData to the file
                     WriteLinesToFile(summaryFile, newSummaryFileData);
                 }
-
             }
 
             //campaign map files
             foreach (string campaignFile in campaignMapFiles)
             {
-
                 string[] campaignFileData = System.IO.File.ReadAllLines(campaignFile);
                 List<string> newCampaignFileData = new List<string>();
                 //loop through array
@@ -363,12 +350,9 @@ namespace PBS_Installer
                     }
                     newCampaignFileData.Add(currentLine);
                 }
-
                 WriteLinesToFile(campaignFile, newCampaignFileData);
             }
-
         }
-
         
         private string GetDifferenceInString(string initialString, string stringToRemove)
         {
@@ -378,7 +362,6 @@ namespace PBS_Installer
             string[] set1 = initialString.Split(',');
             string[] set2 = stringToRemove.Split(',');
 
-
             diff = set1.Except(set2).ToList();
 
             return string.Join(",", diff);
@@ -386,14 +369,14 @@ namespace PBS_Installer
 
         private void WriteLinesToFile(string fileLocation, List<string> contents)
         {
+            //Remove the last line from the list, add it to new variable
             string lastLine = contents.Last<string>();
             contents.Remove(lastLine);
 
+            //Write the list of all lines and the variable of the last line.
+            //the reason for this is to avoid writing a blank new line, which causes cold waters to not start properly.
             System.IO.File.WriteAllLines(fileLocation, contents);
             System.IO.File.AppendAllText(fileLocation, lastLine);
-
-            //strgroupids = strgroupids.Remove(strgroupids.Length - 1); 
-            //Use the above to remove the last character
         }
     }
 }
