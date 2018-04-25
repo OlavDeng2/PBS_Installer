@@ -38,9 +38,13 @@ namespace PBS_Installer
 
         private DirectoryInfo installFolder;
 
-        //Vessels list
-        private string submarineListPath = "\\override\\vessels\\_vessel_list.txt";
-        private string[] vessels;
+        //Default Vessels list
+        private string defaultSubmarineListPath = "\\override\\vessels\\_vessel_list.txt";
+        private string[] defaultVessels;
+
+        //Optional Vessels list
+        private string optionalVesselsListPath = "\\override";
+        private string[] optionalVessels;
         List<string> selectedVessels = new List<string>();
         List<string> vesselsToRemove = new List<string>();
 
@@ -80,13 +84,12 @@ namespace PBS_Installer
 
 
             //TODO: Make the bellow into a function
-            GetVesselList(Directory.GetCurrentDirectory() + modFilesPath + submarineListPath);
+            GetDefaultVesselList(Directory.GetCurrentDirectory() + modFilesPath + defaultSubmarineListPath);
             
-            foreach(string vessel in vessels)
+            foreach(string vessel in optionalVessels)
             {
                 SubmarineListBox.Items.Add(vessel);
             }
-            SubmarineListBox.SelectAll();
         }
 
         //The bellow functions handles events from the main window
@@ -173,14 +176,14 @@ namespace PBS_Installer
         //The functions bellow are not handling events directly from the main window
 
         //TODO: bellow functions can easily be consolidated into fewer functions. 
-        private void GetVesselList(string vesselListPath)
+        private void GetDefaultVesselList(string vesselListPath)
         {
-            vessels = System.IO.File.ReadAllLines(vesselListPath);
+            defaultVessels = System.IO.File.ReadAllLines(vesselListPath);
         }
 
         private void CreateNewVesselsList()
         {
-            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + submarineListPath), selectedVessels);
+            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + defaultSubmarineListPath), selectedVessels);
         }
         
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
@@ -224,12 +227,13 @@ namespace PBS_Installer
         private void RemoveVessels()
         {
             //add ships not present in the selectedVessels array to the vesselsToRemove list
-            vesselsToRemove = vessels.Except(selectedVessels).ToList();
+            vesselsToRemove = defaultVessels.Except(selectedVessels).ToList();
 
             //Loop through all the files the vessels might appear in, and then remove them
             //The files can be found in following locations:
             // override\campaign\campaign001 etc.
             // override\campaign\maps
+            // override\
             string[] campaignMapFiles = Directory.GetFiles(installerPath + "\\temp\\override\\campaign\\maps");
             string[] campaignSummaryFolder = Directory.GetDirectories(installerPath + "\\temp\\override\\campaign");
             List<string> campaignSummaryFiles = new List<string>();
