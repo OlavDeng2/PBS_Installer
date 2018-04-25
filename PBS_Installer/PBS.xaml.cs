@@ -81,26 +81,12 @@ namespace PBS_Installer
 
             //TODO: Make the bellow into a function
             GetVesselList(Directory.GetCurrentDirectory() + modFilesPath + submarineListPath);
-            GetMissionsList(Directory.GetCurrentDirectory() + modFilesPath + missionsListPath);
-            GetCampaignList(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + campaignPath));
             
             foreach(string vessel in vessels)
             {
                 SubmarineListBox.Items.Add(vessel);
             }
             SubmarineListBox.SelectAll();
-
-            foreach(string mission in missions)
-            {
-                MissionListBox.Items.Add(mission);
-            }
-            MissionListBox.SelectAll();
-
-            foreach(string campaign in campaigns)
-            {
-                CampaignListBox.Items.Add(campaign);
-            }
-            CampaignListBox.SelectAll();
         }
 
         //The bellow functions handles events from the main window
@@ -175,26 +161,6 @@ namespace PBS_Installer
             
         }
 
-        private void CampaignApplyButton_Click(object sender, RoutedEventArgs e)
-        {
-            //The code for the campaigns
-            selectedCampaigns.Clear();
-            foreach(object selectedItem in CampaignListBox.SelectedItems)
-            {
-                selectedCampaigns.Add(selectedItem.ToString());
-            }
-            //CreateNewCampaignList();
-
-
-            //the code for missions
-            selectedMissions.Clear();
-            foreach (object selectedItem in MissionListBox.SelectedItems)
-            {
-                selectedMissions.Add(selectedItem.ToString());
-            }
-            //CreateNewMissionsList();
-        }
-
         private void UninstallModButton_Click_1(object sender, RoutedEventArgs e)
         {
             if (Directory.Exists(installModPath))
@@ -216,44 +182,6 @@ namespace PBS_Installer
         {
             WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + submarineListPath), selectedVessels);
         }
-
-        private void GetMissionsList(string missionListLocation)
-        {
-            missions = System.IO.File.ReadAllLines(missionListLocation);
-        }
-
-        private void CreateNewMissionsList()
-        {
-            WriteLinesToFile(System.IO.Path.Combine(Directory.GetCurrentDirectory(), temporaryFiles + missionsListPath), selectedMissions);
-            
-        }
-
-        private void GetCampaignList(string campaignLocation)
-        {
-            campaigns = Directory.GetDirectories(campaignLocation, "camp*");
-        }
-
-        private void CreateNewCampaignList()
-        {
-            //this will just delete the campaigns that we do not want)
-
-        }
-
-
-        private void ModifyCampaignFiles()
-        {
-            //This function should modify the campaign files to take into account the subs that have been added/removed
-            foreach(string campaign in campaigns)
-            {
-                //do the thing
-            }
-        }
-
-        private void ModifyMissionFiles()
-        {
-            //This function should modify the single missions files to take into account the subs that have been added/removed
-        }
-
         
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
         {
@@ -352,6 +280,9 @@ namespace PBS_Installer
                 }
                 WriteLinesToFile(campaignFile, newCampaignFileData);
             }
+
+
+            //single missions
         }
         
         private string GetDifferenceInString(string initialString, string stringToRemove)
