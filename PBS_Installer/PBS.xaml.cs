@@ -137,6 +137,11 @@ namespace PBS_Installer
             addVesselsToMissions();
         }
 
+        private void SelectAllSubsButton_Click(object sender, RoutedEventArgs e)
+        {
+            SubmarineListBox.SelectAll();
+        }
+
         private void SubmarineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
@@ -218,16 +223,18 @@ namespace PBS_Installer
             // override\
             string[] campaignMapFiles = Directory.GetFiles(installerPath + "\\temp\\override\\campaign\\maps");
             string[] campaignSummaryFolder = Directory.GetDirectories(installerPath + "\\temp\\override\\campaign");
-            List<string> campaignSummaryFiles = new List<string>();
+            //List<string> campaignSummaryFiles = new List<string>();
 
             //campaign summary folder
             foreach (string folder in campaignSummaryFolder)
             {
+
+                //this line ads the files multiple times
+                List<string> campaignSummaryFiles = new List<string>();
                 campaignSummaryFiles.AddRange(Directory.GetFiles(folder, "summary.txt"));
 
                 foreach (string summaryFile in campaignSummaryFiles)
                 {
-
                     string[] summaryFileData = System.IO.File.ReadAllLines(summaryFile);
                     List<string> newSummaryFileData = new List<string>();
 
@@ -285,6 +292,13 @@ namespace PBS_Installer
 
             singleMissionFilesToEdit = singleMissionFiles.Except(filesToRemoveFromList).ToList();
 
+            //Ignores missions 5, 6 and 8, currently hard coded
+            singleMissionFilesToEdit.RemoveAll(sm => sm.Contains("single005"));
+            singleMissionFilesToEdit.RemoveAll(sm => sm.Contains("single006"));
+            singleMissionFilesToEdit.RemoveAll(sm => sm.Contains("single008"));
+
+
+
 
             //mission files
             foreach (string missionFile in singleMissionFilesToEdit)
@@ -334,5 +348,7 @@ namespace PBS_Installer
             System.IO.File.WriteAllLines(fileLocation, contents);
             System.IO.File.AppendAllText(fileLocation, lastLine);
         }
+
+        
     }
 }

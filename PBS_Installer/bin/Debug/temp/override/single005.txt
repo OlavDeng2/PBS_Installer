@@ -29,4 +29,4 @@ HelicopterType=wp_helix
 NumberOfAircraft=0
 AircraftType=wp_il-38_may
 
-PlayerVessels=usn_ssbn_ohio_vls,uk_ssbn_vanguard,Walrus,Shark,Spearfish
+PlayerVessels=usn_ssbn_ohio_vls,uk_ssbn_vanguard
