@@ -63,7 +63,7 @@
                         <ColumnDefinition Width="241*"/>
                         <ColumnDefinition Width="151*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="271" Width="491"><Run Text="CaptainX3 &#x9;- Lead Developer"/><LineBreak/><Run Text="Ramius &#x9;&#x9;- Assistant Lead Developer"/><LineBreak/><Run Text="OlavDeng &#x9;- Installer Developer / Mod Developer "/><LineBreak/><Run Text="SnuffyTheSeal &#x9;- Mod Developer"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="271" Width="491"><Run Text="CaptainX3 &#x9;- Lead Developer"/><LineBreak/><Run Text="Ramius &#x9;&#x9;- Assistant Lead Developer"/><LineBreak/><Run Text="OlavDeng2 &#x9;- Installer Developer / Mod Developer "/><LineBreak/><Run Text="SnuffyTheSeal &#x9;- Mod Developer"/></TextBlock>
                 </Grid>
 
             </TabItem>
