@@ -121,7 +121,7 @@ namespace PBS_Installer
 
             //Note: "\\override" is required to ensure that the contents get copied correctly in there
             DirectoryCopy(temporaryFilesFullPath + "\\override", modInstallFullPath, true);
-            MessageBox.Show("The More Playable Subs mod is now installed! You can now launch Cold Waters");
+            MessageBox.Show("The New Playable Subs mod is now installed! You can now launch Cold Waters.");
         }
 
         private void SelectSubmarinesApply_Click(object sender, RoutedEventArgs e)
@@ -153,7 +153,7 @@ namespace PBS_Installer
             {
                 Directory.Delete(modInstallFullPath, true);
             }
-            MessageBox.Show("The more Playable Subs mod is now uninstalled, you can now play vanilla Cold Waters");
+            MessageBox.Show("The New Playable subs mod is now uninstalled. Cold Waters has been reverted back to vanilla.");
         }
 
         private void WelcomeNextButton_Click(object sender, RoutedEventArgs e)
@@ -315,6 +315,7 @@ namespace PBS_Installer
             {
                 string[] missionFileData = System.IO.File.ReadAllLines(missionFile);
                 List<string> newMissionFileData = new List<string>();
+
                 //loop through array
                 foreach (string line in missionFileData)
                 {
@@ -330,6 +331,7 @@ namespace PBS_Installer
                     newMissionFileData.Add(currentLine);
                 }
                 WriteLinesToFile(missionFile, newMissionFileData);
+
             }
             
         }
