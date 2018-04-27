@@ -1,8 +1,0 @@
-[Unit Reference]
-ShipClass=Han
-Description=[CHN] Han (Type 91) Class SSN (1990 Era)
-History=Self Noise Rating: 137 db\nEscape Depth: 600 ft\n\nThe Type 091 Han Class was the first class of nuclear-powered submarines deployed by the PLAN Submarine Force. It's equipped with 6 533mm torpedo tubes and is fitted with both bow and flank sonar arrays. The 1990 version has different armament, lower noise production, better sonar and a new anhecoic tiles. 
-
-[Player Ship Instances]
-PlayerClassNames=Long March 3,Long March 4,Long March 5
-PlayerClassHullNumbers=403,404,405

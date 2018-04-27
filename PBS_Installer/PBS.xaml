@@ -11,13 +11,14 @@
             <ColumnDefinition Width="43*"/>
             <ColumnDefinition Width="474*"/>
         </Grid.ColumnDefinitions>
-        <TabControl HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="2">
+        <TabControl x:Name="Tabs" HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="2">
             <TabItem Header="Welcome">
                 <Grid Background="#FFE5E5E5">
-                    <TextBlock HorizontalAlignment="Left" Margin="53,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="229" Width="376"><Run Text="Welcome to The More Playable Subs Mod installer for Cold Waters."/><LineBreak/><Run/><LineBreak/><Run Text="This installer will install the core PBS mod as well as any additional vessels you choose in the &quot;Select Additional Submarines Tab&quot;"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="53,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="229" Width="376"><Run Text="Welcome to the New Playable Subs mod installer for Cold Waters."/><LineBreak/><Run/><LineBreak/><Run Text="This installer will install the core files for the mod, which includes all of the vanilla playable subs as well as a few new ones that are required by the single missions and campaigns. You may also choose additional optional submarines to install on the &quot;Select Additional Submarines&quot; tab. The installer will automatically add those optional subs to all of the single missions (except special missions) and all of the campaigns."/><LineBreak/><Run/><LineBreak/><Run Text="If you spot any issues or bugs with the mod, please visit the Github page where you downloaded this installer and report the problem on the Issues page, so the mod devs can diagnose and fix it. If you'd like to request that a new sub be added to the optional sub list, you can make a request on the same Issues page on Github."/></TextBlock>
+                    <Button x:Name="WelcomeNextButton" Content="Next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="412,261,0,0" Click="WelcomeNextButton_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Select Additional Submarines">
+            <TabItem x:Name="SelectSubs" Header="Select Additional Submarines">
                 <Grid x:Name="SubmarinesListBox" Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="202*"/>
@@ -27,14 +28,33 @@
                         <ColumnDefinition Width="6*"/>
                         <ColumnDefinition Width="201*"/>
                     </Grid.ColumnDefinitions>
-                    <ListBox x:Name="SubmarineListBox" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="427" Margin="10,10,0,0" Grid.ColumnSpan="6" SelectionChanged="SubmarineListBox_SelectionChanged" SelectionMode="Multiple"/>
-                    <Button x:Name="SelectSubmarinesApply" Content="Apply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Grid.Column="5" Margin="137,261,0,0" Click="SelectSubmarinesApply_Click"/>
-                    <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="146,10,0,0" TextWrapping="Wrap" Text="Make sure to press apply to ensure that the changes are saved before pressing install" VerticalAlignment="Top" Height="189" Width="54"/>
+                    <ListBox x:Name="SubmarineListBox" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="242" Margin="10,10,0,0" Grid.ColumnSpan="2" SelectionChanged="SubmarineListBox_SelectionChanged" SelectionMode="Multiple"/>
+                    <Button x:Name="SelectSubmarinesApply" Content="Apply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Margin="198,261,0,0" Click="SelectSubmarinesApply_Click" Grid.ColumnSpan="2"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Select any additional subs you wish to install (or choose &quot;Select All&quot; to install all additional subs) and then click &quot;Apply&quot; to finalize your selection." VerticalAlignment="Top" Height="189" Width="238" Grid.ColumnSpan="4"/>
                     <Button x:Name="SelectAllSubsButton" Content="Select All" HorizontalAlignment="Left" Margin="27,261,0,0" VerticalAlignment="Top" Width="75" Click="SelectAllSubsButton_Click"/>
+                    <Button x:Name="SubSelectNextButton" Content="Next" Grid.Column="5" HorizontalAlignment="Left" Margin="116,261,0,0" VerticalAlignment="Top" Width="75" Click="SubSelectNextButton_Click"/>
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Install/uninstall">
+            <TabItem Header="Install/Uninstall">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="37*"/>
+                        <ColumnDefinition Width="14*"/>
+                        <ColumnDefinition Width="68*"/>
+                        <ColumnDefinition Width="241*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="121*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Margin="6,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Grid.ColumnSpan="4" Grid.Column="1" Text="The default Cold Waters installation directory is chosen automatically, but you can change the installation directory here:"/>
+                    <TextBlock x:Name="FolderPath" HorizontalAlignment="Left" Margin="6,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1"><Run Text="C:\Program Files (x86)\Steam\SteamApps\common\Cold Waters"/><LineBreak/><Run/></TextBlock>
+                    <Button x:Name="FolderSelect" Content="Select Folder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="25,192,0,0" Click="Button_Click" Grid.Column="4" Grid.ColumnSpan="2"/>
+                    <Button x:Name="InstallButton" Content="Install Mod" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="9.941,239,0,0" Click="InstallButton_Click" Grid.Column="5"/>
+                    <Button x:Name="UninstallModButton" Grid.ColumnSpan="2" Content="Uninstall Mod" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Grid.Column="2" Margin="0,239,0,0" Click="UninstallModButton_Click_1"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Mod Credits" Margin="-2,-2,-2,0">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="37*"/>
@@ -43,11 +63,7 @@
                         <ColumnDefinition Width="241*"/>
                         <ColumnDefinition Width="151*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock HorizontalAlignment="Left" Margin="6,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Grid.ColumnSpan="4" Grid.Column="1" Text="Set your Cold Waters installation location (if default, dont change)"/>
-                    <TextBlock x:Name="FolderPath" HorizontalAlignment="Left" Margin="6,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1"><Run Text="C:\Program Files (x86)\Steam\SteamApps\common\Cold Waters"/><LineBreak/><Run/></TextBlock>
-                    <Button x:Name="FolderSelect" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,169,0,0" Click="Button_Click" Grid.Column="4"/>
-                    <Button x:Name="InstallButton" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="40,239,0,0" Click="InstallButton_Click" Grid.Column="4"/>
-                    <Button x:Name="UninstallModButton" Grid.ColumnSpan="2" Content="Uninstall Mod" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Grid.Column="2" Margin="0,239,0,0" Click="UninstallModButton_Click_1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="271" Width="491"><Run Text="CaptainX3 &#x9;- Lead Developer"/><LineBreak/><Run Text="Ramius &#x9;&#x9;- Assistant Lead Developer"/><LineBreak/><Run Text="OlavDeng &#x9;- Installer Developer / Mod Developer "/><LineBreak/><Run Text="SnuffyTheSeal &#x9;- Mod Developer"/></TextBlock>
                 </Grid>
 
             </TabItem>

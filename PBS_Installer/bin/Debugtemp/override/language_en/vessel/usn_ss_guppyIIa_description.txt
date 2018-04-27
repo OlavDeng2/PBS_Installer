@@ -1,8 +1,0 @@
-[Unit Reference]
-ShipClass=GUPPY IIA
-Description=[USA] GUPPY IIA Class SS (1968 Era)
-History=Self Noise Rating: 150 db\nEscape Depth: 200 ft\n\nThe GUPPY (Greater Underwater Propulsive Power Program) was the USN's answer to the massive conventional submarine buildup of the Soviet Union in the 1950's. The GUPPY IIA boats had rather substantial internal alterations made, including: removal of one main engine, improved air conditioning, better fire control, a dedicated sonar space and larger battery spaces with a more powerful Sargo II batteries. Additionally, more modern sonar systems were fitted, giving the veterans 'ears' almost as good as some of the new nuclear submarines. They remained rather deilcate, however, in comparison to more modern boats - an uncontrolled dive at full speed could send one below crush depth faster than crew could react.
-
-[Player Ship Instances]
-PlayerClassNames=Entemedor, Diodon, Hardhead, Jallao, Menhaden, Razorback, Threadfin, Triante, Trutta, Quillback, Pomodon
-PlayerClassHullNumbers=SS-340, SS-349, SS-365, SS-368, SS-377, SS-394, SS-410, SS-420, SS-421, SS-424, SS-486

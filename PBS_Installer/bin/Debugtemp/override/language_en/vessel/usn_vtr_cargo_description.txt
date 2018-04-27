@@ -1,4 +1,0 @@
-[Unit Reference]
-ShipClass=US Cargo
-Description=Cargo
-History=General cargo ship.

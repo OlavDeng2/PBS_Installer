@@ -1,8 +1,0 @@
-[Unit Reference]
-ShipClass=Shang-A
-Description=[CHN] Shang (Type 93-A) Class SSN (2000 Era)
-History=Self Noise Rating: 125 db\nEscape Depth: 600 ft\n\nThe Type-093A is a slight improvement over the original Shang Class. 12 VLS tubes were added and additional noise reduction technology was introduced.
-
-[Player Ship Instances]
-PlayerClassNames=Long March 13,Long March 14
-PlayerClassHullNumbers=413,414

@@ -1,9 +1,0 @@
-[Unit Reference]
-ShipClass=Oscar I
-Description=[RUS] Oscar I Class SSGN (1984 Era)
-History=Self Noise Rating: 135 db\nEscape Depth: 600 ft\n\nThe Oscar is the sub-surface counterpart to the massive Kirov Class rocket cruisers. At 16,500 tons, this class is larger than any other submarines except the giant Ohio and Typhoon classes. Two Project 949 Granit submarines were built at Severodvinsk and assigned to the Soviet Northern Fleet. They were K-525 laid down in 1975 and K-206 laid down in 1979.
-
-[Player Ship Instances]
-PlayerClassNames=Arkhangelsk, Murmansk
-
-PlayerClassHullNumbers=K-525, K-206

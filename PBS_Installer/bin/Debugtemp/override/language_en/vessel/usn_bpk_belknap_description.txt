@@ -1,7 +1,0 @@
-[Unit Reference]
-ShipClass=Belknap (1968)
-Description=Belknap Class Guided Missile Cruiser (60's version)
-DefensiveWeapons=RIM-67
-OffensiveWeapons=ASROC ASW Missiles\nMK-42 DP Guns\nASW Torpedoes
-Aircraft=1 SH-2F ASW helicopter
-History=The Belknap class cruiser was a class of single-ended guided missile cruisers (their missile armament was installed only forward, unlike "double-ended" missile cruisers with missile armament installed both forward and aft) built for the United States Navy during the 1960s. They were originally designated as DLG frigates (destroyer leaders; the USN use of the term frigate from 1950 to 1975 was intended to evoke the power of the sailing frigates of old), but in the 1975 fleet realignment, they were reclassified as guided missile cruisers (CG).

@@ -156,6 +156,16 @@ namespace PBS_Installer
             MessageBox.Show("The more Playable Subs mod is now uninstalled, you can now play vanilla Cold Waters");
         }
 
+        private void WelcomeNextButton_Click(object sender, RoutedEventArgs e)
+        {
+            Tabs.SelectedIndex = 1;
+        }
+
+        private void SubSelectNextButton_Click(object sender, RoutedEventArgs e)
+        {
+            Tabs.SelectedIndex = 2;
+        }
+
         //The functions bellow are not handling events directly from the main window
 
         //TODO: bellow functions can easily be consolidated into fewer functions. 

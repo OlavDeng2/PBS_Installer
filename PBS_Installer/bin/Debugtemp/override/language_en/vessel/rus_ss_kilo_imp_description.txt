@@ -1,9 +1,0 @@
-[Unit Reference]
-ShipClass=Kilo (Improved)
-Description=[RUS] Improved Kilo Class SS (1984 Era)
-History=Self Noise Rating: 125 db\nEscape Depth: 600 ft\n\nThe Improved Kilo (Varshavyanka) class is an improved version of the original Kilo class submarine, featuring advanced stealth technology, a towed sonar array, extended combat range, and ability to strike land, surface and underwater targets.
-
-[Player Ship Instances]
-PlayerClassNames=Novorossiysk, Rostov-on-Don, Staryy Oskol, Krasnodar, Velikiy Novgorod, Kolpino
-
-PlayerClassHullNumbers=B-261, B-237, B-262, B-265, B-268, B-271

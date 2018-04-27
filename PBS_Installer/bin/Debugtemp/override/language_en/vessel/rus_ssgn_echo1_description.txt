@@ -1,9 +1,0 @@
-[Unit Reference]
-ShipClass=Echo I
-Description=[RUS] Echo I Class SSGN (1968 Era)
-History=Self Noise Rating: 160 db\nEscape Depth: 600 ft\n\nThe Soviet Echo I class (Project 659 class) were completed at Komsomolsk in the Soviet far east in 1960 to 1963. The Echo I class were classed as SSGNs armed with six launchers for the P-5 Pyatyorka (SS-N-3C, "Shaddock") land-attack cruise missile. The Echo I class had to operate in a strategic rather than anti-shipping role because of the lack of fire control and guidance radars.
-
-[Player Ship Instances]
-PlayerClassNames=K-45, K-104, K-59, K-66, K-122, K-151
-
-PlayerClassHullNumbers=K-45, K-104, K-59, K-66, K-122, K-151

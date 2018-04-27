@@ -1,4 +1,0 @@
-[Unit Reference]
-ShipClass=US Trawler
-Description=Trawler - Stand-in for Allied Merchants
-History=Fishing vessel. 

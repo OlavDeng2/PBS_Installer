@@ -1,9 +1,0 @@
-[Unit Reference]
-ShipClass=XIA
-Description=[CHN] Xia (Type 92) Class SSBN (1984 Era)
-History=Self Noise Rating: 130 db\nEscape Depth: 600 ft\n\nThe Type 092 (Chinese designation: 09-II; NATO reporting name: Xia Class) submarine was the first nuclear-powered ballistic missile submarine (SSBN) deployed by the People's Liberation Army Navy Submarine Force, and the first SSBN designed and built in Asia.\nThe first and only confirmed submarine of its class, boat 406, was laid down in 1978 at Huludao, 120 miles north-east of Beijing; she was completed in 1981. She then spent 6 years being fitted out and conducting tests with its 12 JL-1 missiles, becoming active in 1987. Later, the submarine went through numerous upgrades in incremental steps, including using Type H/SQ2-262B sonar manufactured by No. 613 Factory replacing the original Type 604 sonar on board. It reportedly suffered from limited missile range and high sound emissions.
-
-[Player Ship Instances]
-PlayerClassNames=Xia
-
-PlayerClassHullNumbers=406

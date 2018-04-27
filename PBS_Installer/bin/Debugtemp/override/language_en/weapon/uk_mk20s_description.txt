@@ -1,4 +1,0 @@
-[Weapon Reference]
-WeaponName=MK20S
-WeaponDescriptiveName=UK 21 inch Mark 20 "Bidder"
-WeaponDescription=Developed under the codename "Bidder", the Mark 20 was a passive-seeker battery-powered torpedo for use by surface ships (the Mark 20E - for "Escort") and submarines (Mark 20S). The E variant was not long in service due to problems with its programming. This led to several of frigates intended to use them (Rothesay and Whitby classes) never being fitted with torpedo tubes or having them removed.\nIt was replaced in the submarine service in the 1980s by Tigerfish.

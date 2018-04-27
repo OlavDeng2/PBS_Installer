@@ -1,7 +1,0 @@
-[Unit Reference]
-ShipClass=Stern Trawler
-Description=Stern Trawler (<b>NEUTRAL</b>)
-History=This is a <b>NEUTRAL</b> fishing vessel.\n\n<b>Mod limitations:</b>\nProps will not turn.\nModel will disappear if destroyed.
-[Player Ship Instances]
-PlayerClassNames=
-PlayerClassHullNumbers=

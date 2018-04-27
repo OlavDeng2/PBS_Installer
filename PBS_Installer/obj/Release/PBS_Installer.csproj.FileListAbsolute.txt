@@ -11,3 +11,4 @@ e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\R
 e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer.csproj.GenerateResource.Cache
 e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer.exe
 e:\Users\Olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer.pdb
+e:\Users\olav\Desktop\Programming\Github\Other\PBS_Installer\PBS_Installer\obj\Release\PBS_Installer.csprojResolveAssemblyReference.cache

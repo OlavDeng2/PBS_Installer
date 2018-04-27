@@ -1,4 +1,0 @@
-[Weapon Reference]
-WeaponName=Trident SLBM
-WeaponDescriptiveName=Trident (SLBM)
-WeaponDescription=The Trident missile is a submarine-launched ballistic missile (SLBM) equipped with multiple independently targetable reentry vehicles (MIRV). Originally developed by Lockheed Missiles and Space Corporation, the missile is armed with thermonuclear warheads and is launched from nuclear-powered ballistic missile submarines (SSBNs). Trident missiles are carried by fourteen US Navy Ohio-class submarines, with US warheads, and four Royal Navy Vanguard-class submarines, with British warheads. The missile is named after the mythological trident of Neptune.\nIn-game range, 275000 yards

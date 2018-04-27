@@ -1,8 +1,0 @@
-[Unit Reference]
-ShipClass=Albacore
-Description=[USA] Albacore Class SS (1968 Era)
-History=Self Noise Rating: 148 db\nEscape Depth: 600 ft\n\nUSS Albacore (AGSS-569) was a unique research submarine that pioneered the American version of the teardrop hull form (sometimes referred to as an "Albacore hull") of modern submarines. The revolutionary design was derived from extensive hydrodynamic and wind tunnel testing, with an emphasis on underwater speed and maneuverability. She was the third ship of the United States Navy to be named for the albacore, a small tuna found in temperate seas throughout the world.
-
-[Player Ship Instances]
-PlayerClassNames=Albacore
-PlayerClassHullNumbers=AGSS-569

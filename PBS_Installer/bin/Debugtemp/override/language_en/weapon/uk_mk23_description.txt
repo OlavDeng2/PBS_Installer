@@ -1,4 +1,0 @@
-[Weapon Reference]
-WeaponName=MK23
-WeaponDescriptiveName=UK 21 inch Mark 23 "Grog"
-WeaponDescription=The first UK wire-guided torpedo, developed from the Mk 20 "Bidder". Introduced into limited service in 1966 but not fully in operational until 1971. The Grog was obsolescent by the time of its introduction as it had insufficent speed to engage the fastest attack subs. \nIt was seen as a stopgap until the introduction of Tigerfish at the beginning of the 1980s.

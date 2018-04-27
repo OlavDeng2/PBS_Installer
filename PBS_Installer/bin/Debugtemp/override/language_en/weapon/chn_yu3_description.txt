@@ -1,4 +1,0 @@
-[Weapon Reference]
-WeaponName=Yu-3
-WeaponDescriptiveName=Yu-3 Torpedo
-WeaponDescription=The Yu-3 is a Chinese acoustic homing torpedo designed to be fired from submarines. It entered service with the Chinese Navy in 1984. Several modifications have been incorporated to Yu-3 torpedo. One of the important upgrade was to incorporating ASuW capability to Yu-3 torpedo so that the submarines would no longer need to carry separate ASuW and ASW torpedoes.

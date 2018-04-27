@@ -1,9 +1,0 @@
-[Unit Reference]
-ShipClass=Whiskey Long Bin
-Description=[RUS] Whiskey Long Bin Class SSG (1968 Era)
-History=Self Noise Rating: 158 db\nEscape Depth: 600 ft\n\nBetween 1960 and 1963, six boats received an extended sail that could contain four Shaddock missiles. These were called Whiskey Long Bin in the West and Project 665 in the Soviet Union. All guided missile variants of the Whiskey class carried the P-5/ NATO SS-N-3c Shaddock land-attack missile, and had to surface in order to fire their missiles.
-
-[Player Ship Instances]
-PlayerClassNames=Whiskey Long Bin
-
-PlayerClassHullNumbers=S-10
