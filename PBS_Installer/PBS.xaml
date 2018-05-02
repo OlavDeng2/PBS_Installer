@@ -31,7 +31,6 @@
                     <ListBox x:Name="SubmarineListBox" HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="242" Margin="10,10,0,0" Grid.ColumnSpan="2" SelectionChanged="SubmarineListBox_SelectionChanged" SelectionMode="Multiple"/>
                     <Button x:Name="SelectSubmarinesApply" Content="Apply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Margin="198,261,0,0" Click="SelectSubmarinesApply_Click" Grid.ColumnSpan="2"/>
                     <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Select any additional subs you wish to install (or choose &quot;Select All&quot; to install all additional subs) and then click &quot;Apply&quot; to finalize your selection." VerticalAlignment="Top" Height="227" Width="229" Grid.ColumnSpan="4"/>
-                    <Button x:Name="SelectAllSubsButton" Content="Select All" HorizontalAlignment="Left" Margin="27,261,0,0" VerticalAlignment="Top" Width="75" Click="SelectAllSubsButton_Click"/>
                     <Button x:Name="SubSelectNextButton" Content="Next" Grid.Column="5" HorizontalAlignment="Left" Margin="116,261,0,0" VerticalAlignment="Top" Width="75" Click="SubSelectNextButton_Click"/>
                 </Grid>
 

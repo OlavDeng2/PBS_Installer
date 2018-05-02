@@ -137,11 +137,6 @@ namespace PBS_Installer
             addVesselsToMissions();
         }
 
-        private void SelectAllSubsButton_Click(object sender, RoutedEventArgs e)
-        {
-            SubmarineListBox.SelectAll();
-        }
-
         private void SubmarineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
